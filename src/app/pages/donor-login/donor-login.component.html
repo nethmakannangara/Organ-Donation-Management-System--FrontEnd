@@ -1,0 +1,30 @@
+<div class="donor_login_popup d-flex justify-content-center align-items-center">
+    <div class="main_pannel justify-content-center d-flex flex-column flex-md-row mt-5 mb-5">
+        <div class="box mt-5 mb-5">.</div>
+        <div class="left_side mt-5 mb-5 col-6 col-md-12">
+            <img src="/public/img/donor_login_page_image.png" alt="" srcset="" class="img-fluid">
+        </div>
+        <div class="right_side d-flex mt-5 mb-5 col-12">
+            <div class="login_panel">
+                <div class="option_row ">
+                    <span>Sign Up</span>
+                    <span>Sign in</span>
+                </div>
+                <div class="details_section">
+                    <label for="">Email</label><br>
+                    <input type="text" placeholder="example@gmail.com"><br>
+                    <label for="">Password</label><br>
+                    <input type="password"><br>
+                    <div class="text-center mt-4 mb-5">
+                        <span class="login_button" (click)="onSignIn()">Sign Up</span>
+                        <p class="signIn_option mt-5">I have an Account?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <router-outlet></router-outlet>
+</div>

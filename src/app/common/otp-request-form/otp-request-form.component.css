@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.otp_section {
+    width: 100%;
+    background-color: #f8f8f8;
+    margin-top: 2%;
+    border-radius: 0.7rem;
+}
+
+.otp_section label {
+    margin-left: 6%;
+    margin-top: 8%;
+    margin-bottom: 2%;
+    font-family: lucida-sans;
+    color: #4E6BF4;
+    font-size: 18px;
+    user-select: none;
+}
+
+.otp_textFiled {
+    width: 40%;
+    outline: none;
+    border: 10px #E0DDDD;
+    font-size: 14px;
+    font-family: manjari;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+.otp_section input::placeholder {
+    font-size: 15px;
+    font-family: manjari;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.otp_section span {
+    background-color: #7288F3;
+    padding: 5px 25px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: #DFE5FF;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+    user-select: none;
+}
+
+.otp_section span:hover {
+    background-color: #4E6BF4; 
+}
+
+.otp_section span:active {
+    transform: scale(0.95); 
+    background-color: #3b4f8b;
+}
+
+.otp_resend_option {
+    user-select: none;
+    color: #1abd35;
+    cursor: pointer;
+    font-family: "Inria Sans", sans-serif;
+    font-size: 16px;
+}
+
+.otp_resend_option:active{
+    color: #1d9738;
+}
