@@ -1,10 +1,10 @@
 <div class="details_section">
     <label for="">Email</label><br>
-    <input type="text" placeholder="example@gmail.com"><br>
+    <input type="text" placeholder="example@gmail.com" [(ngModel)]="loginInfo.email"><br>
     <label for="">Password</label><br>
-    <input type="password"><br>
+    <input type="password" [(ngModel)]="loginInfo.password"><br>
     <div class="text-center mt-4 mb-5">
-        <span class="login_button">Sign Up</span>
+        <span class="login_button" (click)="onSignIn()">Sign Up</span>
         <p class="signIn_option mt-5">I have an Account?</p>
     </div>
 </div>
