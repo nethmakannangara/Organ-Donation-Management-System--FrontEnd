@@ -4,6 +4,7 @@ import { Component, Injectable } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { CodeVerificationComponent } from '../code-verification/code-verification.component';
+import { LoginService } from '../../login.service';
 
 @Component({
   selector: 'app-login-information',
@@ -18,7 +19,7 @@ import { CodeVerificationComponent } from '../code-verification/code-verificatio
 })
 export class LoginInformationComponent {
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient,private info:LoginService) {}
 
   public loginInfo: any = {
     email: "",
@@ -26,28 +27,14 @@ export class LoginInformationComponent {
     role: "DONOR"
   }
 
-  donorInfo: any = {
-    email: "",
-    password: "",
-    role: "",
-    hello:""
-  }
-
   onSignIn() {
     if (this.loginInfo.email != "" && this.loginInfo.password != "") {
-
-      this.donorInfo = {
-        email:this.loginInfo.email,
-        password : this.loginInfo.password,
-        role : this.loginInfo.role
-      }
-
-      this.http.post("http://localhost:8080/donor/login", this.loginInfo).subscribe(data => {
+      this.http.post("http://localhost:8080/donors/login", this.loginInfo).subscribe(data => {
         if (data) {
           console.log("Invalied Email")
         } else {
           this.router.navigate(['donor-Login/verification']), { relativeTo: this.router.routerState.snapshot.root }
-          CodeVerificationComponent.loadRegistrationForm(this.donorInfo);
+          this.info.setLoginInfo(this.loginInfo);
         }
       })
     } else {

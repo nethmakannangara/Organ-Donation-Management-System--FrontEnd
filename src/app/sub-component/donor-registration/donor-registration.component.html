@@ -18,7 +18,8 @@
                             <div class="form-label">Name</div>
                             <div class="text-area-ty-1">
                                 <div class="text-filed-g-1">
-                                    <input type="text" [(ngModel)] = "donor.firstName">
+                                    <input type="text" id="textFiledName" [(ngModel)]="donor.firstName" required
+                                        autofocus>
                                     <div class="form-text">First Name</div>
                                 </div>
                                 <div class="text-filed-g-1">
@@ -32,7 +33,8 @@
                             <div class="form-label">Date of Birth</div>
                             <div class="text-area-ty-2">
                                 <div class="text-filed-g-1">
-                                    <input type="date" placeholder="MM-DD-YYYY" [(ngModel)] = "donor.dob">
+                                    <input type="date" id="dobInput" placeholder="MM-DD-YYYY" [(ngModel)]="donor.dob"
+                                        (input)="checkBirthday(donor.dob)" required>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +43,7 @@
                             <div class="form-label">Phone Number</div>
                             <div class="text-area-ty-2">
                                 <div class="text-filed-g-1">
-                                    <input type="text" placeholder="(+94) 000-0000" [(ngModel)] = "donor.contactNo">
+                                    <input type="text" placeholder="(+94) 000-0000" [(ngModel)]="donor.contactNo">
                                 </div>
                             </div>
                         </div>
@@ -50,7 +52,8 @@
                             <div class="form-label">Email</div>
                             <div class="text-area-ty-2">
                                 <div class="text-filed-g-1">
-                                    <input type="text" placeholder="example@gmail.com" [(ngModel)] = "donor.email">
+                                    <input type="text" id="textFiledEmail" placeholder="example@gmail.com"
+                                        [(ngModel)]="donor.email" disabled="true">
                                 </div>
                             </div>
                         </div>
@@ -59,39 +62,41 @@
                             <div class="form-label">Address</div>
                             <div class="text-area-ty-1">
                                 <div class="text-filed-g-3">
-                                    <input type="text" [(ngModel)] = "donor.streetAddressLine">
+                                    <input type="text" [(ngModel)]="donor.streetAddressLine1" required>
                                     <div class="form-text">Street Address</div>
                                 </div>
                             </div>
                             <div class="text-area-ty-1">
-                                <div class="text-filed-g-3" [(ngModel)] = "donor.streetAddressLine2">
+                                <div class="text-filed-g-3" [(ngModel)]="donor.streetAddressLine2">
                                     <input type="text">
                                     <div class="form-text">Street Address Line 2</div>
                                 </div>
                             </div>
                             <div class="text-area-ty-1">
                                 <div class="text-filed-g-1">
-                                    <input type="text" [(ngModel)] = "donor.city">
+                                    <input type="text" [(ngModel)]="donor.city" required>
                                     <div class="form-text">City</div>
                                 </div>
                                 <div class="text-filed-g-1">
-                                    <input type="text" [(ngModel)] = "donor.province">
+                                    <input type="text" [(ngModel)]="donor.province" required>
                                     <div class="form-text">State/Province</div>
                                 </div>
                             </div>
                             <div class="text-area-ty-2 mt-3">
                                 <div class="text-filed-g-1">
-                                    <input type="text" [(ngModel)] = "donor.postalCode">
+                                    <input type="text" [(ngModel)]="donor.postalCode" required>
                                     <div class="form-text">Postal/Zip Code</div>
                                 </div>
                             </div>
                         </div>
-                        <!-- RELIGION -->
+                        <!-- BLOODTYPE -->
                         <div class="details-row">
-                            <div class="form-label">Religion</div>
+                            <div class="form-label">Select your blood type</div>
                             <div class="text-area-ty-2">
                                 <div class="text-filed-g-1">
-                                    <input type="text" [(ngModel)] = "donor.religion">
+                                    <select id="blood-type" name="Blood Type" [(ngModel)]="donor.bloodType" required>
+                                        <option *ngFor="let bloodtype of bloodTypes" [value]="">{{bloodtype}}</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -100,15 +105,15 @@
                             <div class="form-label">Gender</div>
                             <div class="radio-area">
                                 <div class="radio-filed">
-                                    <input type="radio" name="gender">
+                                    <input type="radio" name="gender" [(ngModel)]=donor.gender value="Male">
                                     <div class="radio-label">Male</div>
                                 </div>
                                 <div class="radio-filed">
-                                    <input type="radio" name="gender">
+                                    <input type="radio" name="gender" [(ngModel)]=donor.gender value="Female">
                                     <div class="radio-label">Female</div>
                                 </div>
                                 <div class="radio-filed">
-                                    <input type="radio" name="gender">
+                                    <input type="radio" name="gender" [(ngModel)]=donor.gender value="N/A">
                                     <div class="radio-label">N/A</div>
                                 </div>
                             </div>
@@ -129,10 +134,11 @@
                     <div class="sub-panel mt-2">
                         <!-- REGISTRAION_DATE -->
                         <div class="details-row">
-                            <div class="form-label">Date od Registraion</div>
+                            <div class="form-label">Date of Registraion</div>
                             <div class="text-area-ty-2">
                                 <div class="text-filed-g-1">
-                                    <input type="text" id="date_of_registration" [(ngModel)] = "donor.dateOfRegistration">
+                                    <input type="text" id="date_of_registration" [(ngModel)]="donor.dateOfRegistration"
+                                        disabled="true">
                                 </div>
                             </div>
                         </div>
@@ -142,43 +148,56 @@
                             <div class="radio-area">
                                 <!-- LIVER -->
                                 <div class="radio-filed">
-                                    <input type="radio" id="" value="" id="organ_type">
+                                    <input type="radio" class="organ-radio" value="" id="organ_type1" value="LIVER"
+                                        (click)="toggleRadio('Heart')">
                                     <div class="radio-label">Liver</div>
                                 </div>
                                 <!-- KIDNEY -->
                                 <div class="radio-filed">
-                                    <input type="radio" id="" value="" id="organ_type">
+                                    <input type="radio" class="organ-radio" value="" id="organ_type2" value="KIDNEY"
+                                        (click)="toggleRadio('Kidney')">
                                     <div class="radio-label">Kidney</div>
                                 </div>
                                 <!-- PANCREAS -->
                                 <div class="radio-filed">
-                                    <input type="radio" id="" value="" id="organ_type">
+                                    <input type="radio" class="organ-radio" value="" id="organ_type3" value="PANCREAS"
+                                        (click)="toggleRadio('Pancreas')">
                                     <div class="radio-label">Pancreas</div>
                                 </div>
                                 <!-- HEART -->
                                 <div class="radio-filed">
-                                    <input type="radio" id="" value="" id="organ_type">
+                                    <input type="radio" class="organ-radio" value="" id="organ_type4" value="HEART"
+                                        (click)="toggleRadio('Heart')">
                                     <div class="radio-label">Heart</div>
                                 </div>
                                 <!-- COMEA -->
                                 <div class="radio-filed">
-                                    <input type="radio" id="" value="" id="organ_type">
+                                    <input type="radio" class="organ-radio" value="" id="organ_type5" value="Comea"
+                                        (click)="toggleRadio('Comea')">
                                     <div class="radio-label">Comea</div>
                                 </div>
                                 <!-- BONE -->
                                 <div class="radio-filed">
-                                    <input type="radio" id="" value="" id="organ_type">
+                                    <input type="radio" class="organ-radio" value="" id="organ_type6" value="BONE"
+                                        (click)="toggleRadio('Bone')">
                                     <div class="radio-label">Bone</div>
                                 </div>
                                 <!-- LUNG -->
                                 <div class="radio-filed">
-                                    <input type="radio" id="" value="" id="organ_type">
+                                    <input type="radio" class="organ-radio" value="" id="organ_type7" value="Lung"
+                                        (click)="toggleRadio('Lung')">
                                     <div class="radio-label">Lung</div>
                                 </div>
                                 <!-- BONE_MARROW -->
                                 <div class="radio-filed">
-                                    <input type="radio" id="" value="" id="organ_type">
+                                    <input type="radio" class="organ-radio" value="" id="organ_type8"
+                                        value="BONE MARROW" (click)="toggleRadio('Bone Marrow')">
                                     <div class="radio-label">Bone Marrow</div>
+                                </div>
+                                <br>
+                                <!-- CLEAR-ALL -->
+                                <div class="radio-filed">
+                                    <label for="" class="clear-radio" (click)="clearSelection()">Clear</label>
                                 </div>
                             </div>
                         </div>
@@ -187,19 +206,19 @@
                             <div class="form-label">Specific Purpose</div>
                             <div class="radio-area">
                                 <div class="radio-filed">
-                                    <input type="radio" value="Medical Transplant">
+                                    <input type="radio" value="Medical Transplant" name="purpose" id="purpose1">
                                     <div class="radio-label">Medical Transplant</div>
                                 </div>
                             </div>
                             <div class="radio-area">
                                 <div class="radio-filed">
-                                    <input type="radio" value="Educational/Research">
+                                    <input type="radio" value="Educational/Research" name="purpose" id="purpose2">
                                     <div class="radio-label">Educational/Research</div>
                                 </div>
                             </div>
                             <div class="radio-area">
                                 <div class="radio-filed">
-                                    <input type="radio" value="Both">
+                                    <input type="radio" value="Both" name="both" (click)="removeOtherPurpose()">
                                     <div class="radio-label">Both Medical Transplant and Educational/Research</div>
                                 </div>
                             </div>
@@ -219,7 +238,7 @@
 
                             <div class="radio-area">
                                 <div class="radio-filed">
-                                    <input type="checkbox">
+                                    <input type="checkbox" id="condition1" required>
                                     <div class="radio-label">I confirm that the information i provided in this document
                                         is accurate and
                                         true.</div>
@@ -228,7 +247,7 @@
 
                             <div class="radio-area">
                                 <div class="radio-filed">
-                                    <input type="checkbox">
+                                    <input type="checkbox" id="condition2" required>
                                     <div class="radio-label">I allow my organs to be donated for medical transplant or
                                         educational/research purpose.</div>
                                 </div>
@@ -236,7 +255,7 @@
 
                             <div class="radio-area">
                                 <div class="radio-filed">
-                                    <input type="checkbox">
+                                    <input type="checkbox" id="condition3" required>
                                     <div class="radio-label">I acknowledge that i have to inform my family about this
                                         registration.</div>
                                 </div>
@@ -244,7 +263,7 @@
 
                             <div class="radio-area">
                                 <div class="radio-filed">
-                                    <input type="checkbox">
+                                    <input type="checkbox" id="condition4" required>
                                     <div class="radio-label">I confirm that i always need to keep the organ donor card
                                         and the document came with it.</div>
                                 </div>
@@ -252,7 +271,7 @@
 
                             <div class="radio-area">
                                 <div class="radio-filed">
-                                    <input type="checkbox">
+                                    <input type="checkbox" id="condition5">
                                     <div class="radio-label">I allow my information to be submitted to donor registry.
                                     </div>
                                 </div>
@@ -263,13 +282,17 @@
 
             </div>
 
-            <div class="mt-5 mb-4">
+            <div class="mt-5 mb-4 row">
                 <div class="form_footer">
                     <div class="text-center">
-                        <span class="btn-submit">Submit</span>
+                        <span class="btn-submit" (click)="submit()">Submit</span>
                         <span class="btn-clear">Clear Form</span>
                     </div>
                 </div>
+            </div>
+
+            <div class="row">
+                <div id="donorId"><label for="donorIdLbl">{{donor.donorId}}</label></div>
             </div>
         </div>
     </div>

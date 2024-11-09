@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { LoginInformationComponent } from '../login-information/login-information.component';
+import { LoginService } from '../../login.service';
 
 @Component({
   selector: 'app-code-verification',
@@ -13,15 +13,14 @@ import { LoginInformationComponent } from '../login-information/login-informatio
   styleUrl: './code-verification.component.css'
 })
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-
 export class CodeVerificationComponent {
-  static http: any;
-
-  constructor(private router: Router, private http: HttpClient, private loginInfo: LoginInformationComponent) {
+ 
+  constructor(private router: Router, private http: HttpClient, private loginService: LoginService) {
+    this.loadRegistrationForm();
+    this.generateCode = "1234211";
   }
+
+  generateCode:String;
 
   otp: String[] = ['', '', '', ''];
 
@@ -44,13 +43,25 @@ export class CodeVerificationComponent {
     }
   }
 
-  public static loadRegistrationForm(loginInfo: any) {
-    if (loginInfo != "") {
-      this.http.get(`http://localhost:8080/send-verification?email=${loginInfo.email}`).subscribe((data: any) => {
-          console.log(data);
+  public loadRegistrationForm(){
+    if (true) {
+      this.http.get(`http://localhost:8080/send-verification?email=${this.loginService.getLoginInfo().email}`).subscribe((data: any) => {
+        console.log(data);
+        this.generateCode = data;
       })
     }
   }
 
-
+  public checkVerificationCode() {
+    let code = "";
+    for (let index = 0; index < this.otp.length; index++) {
+      code += this.otp[index];
+    }
+    console.log(this.generateCode == code);
+    if(this.generateCode == code){
+      this.router.navigate(['registration']), { relativeTo: this.router.routerState.snapshot.root }
+    }
+  }
 }
+
+

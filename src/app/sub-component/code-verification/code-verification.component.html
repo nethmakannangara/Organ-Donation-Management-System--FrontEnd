@@ -8,7 +8,7 @@
         <input type="text" id="textfiled-4" class="otp_textFiled m-3" [(ngModel)] = "otp[3]" (input)="onInputChange($event,3)" maxlength="1" pattern="[0-9]" required>
     </div>
     <div class="text-center mt-3 mb-5">
-        <span class="verify_button" (onclink)="onVerify()">Verify Me</span>
+        <span class="verify_button" (click)="checkVerificationCode()">Verify Me</span>
         <p class="otp_resend_option mt-5">Resend Verify Code</p>
     </div>
 </div>
