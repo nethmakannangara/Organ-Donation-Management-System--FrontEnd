@@ -3,11 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Component, NgModule, OnInit } from '@angular/core';
 import { FormArrayName, FormsModule } from '@angular/forms';
 import { LoginService } from '../../login.service';
+import { AngularJSUrlCodec } from '@angular/common/upgrade';
+import { MatProgressBar } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-donor-registration',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,MatProgressBar],
   templateUrl: './donor-registration.component.html',
   styleUrl: './donor-registration.component.css'
 })

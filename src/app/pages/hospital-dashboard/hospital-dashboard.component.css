@@ -1,0 +1,82 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+@font-face {
+    font-family: "MergeOne-Regular";
+    src: url("/fonts/MergeOne-Regular.ttf");
+}
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.left-side-pannel{
+    width: 7%;
+    left: 0%;
+}
+
+.logo{
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo img{
+    width: 70%;
+    height: 40%;
+}
+
+.option-pannel{
+    width: 100%;
+    height: 80vh;
+    text-align: center;
+}
+
+.option-1,
+.option-2,
+.option-3,
+.option-4,
+.option-5{
+    width: 100%;
+    margin-top: 5%;
+    height: 6vh;
+}
+
+.option-1 svg,
+.option-2 svg,
+.option-3 svg,
+.option-4 svg,
+.option-5 svg{
+    stroke: #9999ff;
+    cursor: pointer;
+}
+
+.option-1 svg:hover,
+.option-2 svg:hover,
+.option-3 svg:hover,
+.option-4 svg:hover,
+.option-5 svg:hover{
+    stroke: #8080ff;
+}
+
+.nav-bar{
+    width: 100%;
+    height: fit-content;
+    text-align: right;
+}
+
+.hospital-name{
+    margin-right: 7%;
+    font-size: 35px;
+    font-family: MergeOne-Regular;
+}
+
+.body{
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: #e5e5e5;
+}
+
