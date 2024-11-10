@@ -1,0 +1,24 @@
+<!-- <div class="card-body">
+    <h5 class="card-title">URGENT ORGAN DONATION REQUEST</h5>
+    <p class="card-text">{{announcementInfo.description}}</p>
+    <label for="">{{announcementInfo.age}}</label>
+    <button>{{announcementInfo.organ}}</button>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+</div> -->
+
+
+
+<div class="">
+    <div class="donation-card m-4">
+        <h2>URGENT ORGAN DONATION REQUEST</h2>
+        <p><strong>Patient's Age:</strong> {{announcementInfo.age}} years</p>
+        <p><strong>Organ Needed:</strong> {{announcementInfo.organ}}</p>
+        <p><strong>Urgency:</strong> {{announcementInfo.status}}</p>
+        <p class="description">
+            {{announcementInfo.description}}
+        </p>
+        <button class="request-button" onclick="window.location.href='mailto:donation@organization.com';">Request to
+            Donate</button>
+    </div>
+</div>
+

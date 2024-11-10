@@ -4,6 +4,7 @@ import { LoginInformationComponent } from './sub-component/login-information/log
 import { CodeVerificationComponent } from './sub-component/code-verification/code-verification.component';
 import { DonorRegistrationComponent } from './sub-component/donor-registration/donor-registration.component';
 import { DonorDashboardComponent } from './pages/donor-dashboard/donor-dashboard.component';
+import { AnnouncementsComponent } from './sub-component/announcements/announcements.component';
 
 export const routes: Routes = [
     {
@@ -32,6 +33,12 @@ export const routes: Routes = [
     },
     {
         path:"dashboard",
-        component:DonorDashboardComponent
+        component:DonorDashboardComponent,
+        children:[
+            {
+                path:'announcements',
+                component:AnnouncementsComponent
+            }
+        ]
     }
 ];

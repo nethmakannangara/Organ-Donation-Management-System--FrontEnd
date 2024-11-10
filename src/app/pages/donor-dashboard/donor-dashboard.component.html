@@ -1,190 +1,109 @@
 <div class="container-fluid">
-    <div class="main d-flex">
-        <!-- LEFT_SIDE_PANEL -->
-        <div class="side-bar d-block">
-            <div class="logo-box">
-                <div class="main-logo">
-                    <img src="img/hospital-logo-removebg.png" alt="" srcset="" class="img-fluid logo-image">
-                </div>
-            </div>
-            <div class="option-panel">
-                <div class="option-1 mt-3 mb-4">
-                    <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-newspaper news-feed" id="btn_news_feed">
-                            <path
-                                d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
-                            <path d="M18 14h-8" />
-                            <path d="M15 18h-5" />
-                            <path d="M10 6h8v4h-8V6Z" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="option-2 mt-1">
-                    <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-house" id="btn_home">
-                            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
-                            <path
-                                d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="option-3 mt-1">
-                    <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-mail" id="btn_view_email">
-                            <rect width="20" height="16" x="2" y="4" rx="2" />
-                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="option-4 mt-1">
-                    <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-user-round-pen" id="btn_edit_profile">
-                            <path d="M2 21a8 8 0 0 1 10.821-7.487" />
-                            <path
-                                d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
-                            <circle cx="10" cy="8" r="5" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="logout-box">
-                <div class="footer-pannel">
-                    <div class="option-5">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-log-out" id="btn_logout">
-                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                                <polyline points="16 17 21 12 16 7" />
-                                <line x1="21" x2="9" y1="12" y2="12" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="main d-flex">
+    <!-- LEFT_SIDE_PANEL -->
+    <div class="side-bar d-block">
+      <div class="logo-box">
+        <div class="main-logo">
+          <img src="img/hospital-logo-removebg.png" alt="" srcset="" class="img-fluid logo-image">
         </div>
-
-        <div class="right-side-panel">
-            <!-- NAV_BAR -->
-            <div class="nav-bar row">
-                <div class="hospital-name">
-                    <div class="title">LifeLink Hospital</div>
-                </div>
-                <div class="profile-photo-section">
-                    <div><img src="img/profile-photo.jpg" alt="" class="profile_photo img-fluid"></div>
-                </div>
-            </div>
-            <!-- HEADER -->
-            <div class="header-panel d-flex row">
-                <div class="greeting-section">
-                    <div class="greeting-content">Good Morning, Nethma!</div>
-                </div>
-                <div style="width: 50%; justify-content: center;" class="d-flex">
-                    <div class="blood-match-qty text-center">
-                        <div class="form-text">Blood matching</div>
-                        <div class="display-count">24</div>
-                    </div>
-                    <div class="organ-matching-qty text-center">
-                        <div class="form-text">Organ matching</div>
-                        <div class="display-count">64</div>
-                    </div>
-                </div>
-            </div>
-            <!-- ROUTING_AREA -->
-            <div style="overflow: scroll; max-height:550px;">
-                <div class="row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                      <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                  
-            </div>
+      </div>
+      <div class="option-panel">
+        <div class="option-1 mt-3 mb-4" routerLink="announcements">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-newspaper news-feed" id="btn_news_feed">
+              <path
+                d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+              <path d="M18 14h-8" />
+              <path d="M15 18h-5" />
+              <path d="M10 6h8v4h-8V6Z" />
+            </svg>
+          </div>
         </div>
+        <div class="option-2 mt-1">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-house" id="btn_home">
+              <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+              <path
+                d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            </svg>
+          </div>
+        </div>
+        <div class="option-3 mt-1">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-mail" id="btn_view_email">
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+          </div>
+        </div>
+        <div class="option-4 mt-1">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-user-round-pen" id="btn_edit_profile">
+              <path d="M2 21a8 8 0 0 1 10.821-7.487" />
+              <path
+                d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
+              <circle cx="10" cy="8" r="5" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="logout-box">
+        <div class="footer-pannel">
+          <div class="option-5">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-log-out" id="btn_logout">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" x2="9" y1="12" y2="12" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="right-side-panel">
+      <!-- NAV_BAR -->
+      <div class="nav-bar row">
+        <div class="hospital-name">
+          <div class="title">LifeLink Hospital</div>
+        </div>
+        <div class="profile-photo-section">
+          <div><img src="img/profile-photo.jpg" alt="" class="profile_photo img-fluid"></div>
+        </div>
+      </div>
+      <!-- HEADER -->
+      <div class="header-panel d-flex row">
+        <div class="greeting-section">
+          <div class="greeting-content">Good Morning, <label for="" id="donor-id-name">{{donor.firstName}}</label></div>
+        </div>
+        <div style="width: 50%; justify-content: center;" class="d-flex">
+          <div class="blood-match-qty text-center">
+            <div class="form-text">Blood matching</div>
+            <div class="display-count">24</div>
+          </div>
+          <div class="organ-matching-qty text-center">
+            <div class="form-text">Organ matching</div>
+            <div class="display-count">64</div>
+          </div>
+        </div>
+      </div>
+      <!-- ROUTING_AREA -->
+      <div style="overflow: scroll; max-height:550px;" class="mt-2 ">
+        <div class="row">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
