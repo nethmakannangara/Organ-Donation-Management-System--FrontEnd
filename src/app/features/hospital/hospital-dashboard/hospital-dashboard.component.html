@@ -1,0 +1,453 @@
+<nav class="top-0 z-50 fixed border-gray-200 bg-white border-b w-full">
+
+    <div class="px-3 lg:px-5 py-3 lg:pl-3">
+
+        <div class="flex justify-between items-center">
+
+            <div class="flex justify-start rtl:justify-end items-center">
+
+                <!-- <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center sm:hidden hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600 text-gray-500 text-sm focus:outline-none dark:text-gray-400">
+              <span class="sr-only">Open sidebar</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                 <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+              </svg>
+           </button> -->
+
+                <a href="" class="flex ms-2 md:me-24">
+                    <img src="/img/hospital-logo.png" class="hopital-logo" alt="Hospital Logo" />
+                    <span class="text-5xl sm:text-2xl select-none hospital-name self-center">LinkLife
+                        Hospital</span>
+                </a>
+
+            </div>
+
+            <div class="flex items-center">
+                <div class="flex items-center ms-3">
+                    <div>
+                        <!-- TODO -->
+                        <app-pulse-animation-component></app-pulse-animation-component>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<aside id="logo-sidebar"
+    class="top-5 left-0 z-40 fixed border-gray-200 bg-white pt-20 border-r w-28 h-screen transition-transform -translate-x-full sm:translate-x-0"
+    aria-label="Sidebar">
+
+    <div class="bg-white px-3 pb-4 h-full overflow-y-auto">
+
+        <div class="flex justify-center dashboard-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="transition duration-75 cursor-pointer lucide lucide-gauge">
+                <path d="m12 14 4-4" />
+                <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+            </svg>
+        </div>
+        <div class="flex justify-center profile-edit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="transition duration-75 cursor-pointer lucide lucide-user-round-pen">
+                <path d="M2 21a8 8 0 0 1 10.821-7.487" />
+                <path
+                    d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
+                <circle cx="10" cy="8" r="5" />
+            </svg>
+        </div>
+        <div class="flex justify-center mail-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="transition duration-75 cursor-pointer lucide lucide-mail">
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+        </div>
+        <div class="flex justify-center appointment-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="transition duration-75 cursor-pointer lucide lucide-calendar-days">
+                <path d="M8 2v4" />
+                <path d="M16 2v4" />
+                <rect width="18" height="18" x="3" y="4" rx="2" />
+                <path d="M3 10h18" />
+                <path d="M8 14h.01" />
+                <path d="M12 14h.01" />
+                <path d="M16 14h.01" />
+                <path d="M8 18h.01" />
+                <path d="M12 18h.01" />
+                <path d="M16 18h.01" />
+            </svg>
+
+        </div>
+        <div class="flex justify-center details-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="transition duration-75 cursor-pointer lucide lucide-clipboard-list">
+                <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                <path d="M12 11h4" />
+                <path d="M12 16h4" />
+                <path d="M8 11h.01" />
+                <path d="M8 16h.01" />
+            </svg>
+        </div>
+
+        <div class="flex justify-center items-center h-12 logout-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="transition duration-75 cursor-pointer lucide lucide-log-out">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" x2="9" y1="12" y2="12" />
+            </svg>
+        </div>
+    </div>
+</aside>
+
+<div class="mt-28 mr-4 ml-32 main-body">
+
+    <div class="mt-14 p-4 rounded-lg">
+
+        <div class="grid grid-cols-3">
+
+            <div class="grid grid-cols-4 col-span-2 bg-slate-50 mx-4 p-2 rounded h-fit">
+
+                <!-- CALENDER-BOX -->
+                <div class="col-span-2 p-2 sub">
+                    <div id="datepicker-inline" class="flex justify-center w-full" inline-datepicker></div>
+                </div>
+
+                <!-- HOSPITAL-DETAILS -->
+                <div class="grid grid-cols-2 col-span-2 hospital-details-box">
+
+                    <div class="grid grid-col-2">
+                        <!-- PATIENT-DETAILS -->
+                        <div class="m-4 rounded-2xl patient-details-box">
+                            <div class="flex justify-evenly items-center mt-1 w-full h-10">
+                                <svg fill="#000000" width="33px" height="33px" viewBox="0 0 32 32"
+                                    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+                                    version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path
+                                        d="M9.731,14.075c-1.387,0.252 -2.676,0.921 -3.687,1.932c-1.309,1.309 -2.044,3.084 -2.044,4.935l0,4.039c0,1.657 1.343,3 3,3c4.184,-0 13.816,-0 18,-0c1.657,-0 3,-1.343 3,-3l0,-4.039c0,-1.851 -0.735,-3.626 -2.044,-4.935c-1.011,-1.011 -2.3,-1.68 -3.687,-1.932c0.468,-0.939 0.731,-1.997 0.731,-3.117c0,-3.863 -3.137,-7 -7,-7c-3.863,0 -7,3.137 -7,7c0,1.12 0.263,2.178 0.731,3.117Zm11.169,1.88c-1.262,1.239 -2.993,2.003 -4.9,2.003c-1.907,0 -3.638,-0.764 -4.9,-2.003c-0.04,0.005 -0.08,0.007 -0.12,0.007c-1.321,0 -2.588,0.525 -3.521,1.459c-0.934,0.934 -1.459,2.201 -1.459,3.521c0,0 0,4.039 0,4.039c0,0.552 0.448,1 1,1l18,-0c0.552,-0 1,-0.448 1,-1c-0,-0 0,-4.039 0,-4.039c0,-1.32 -0.525,-2.587 -1.459,-3.521c-0.933,-0.934 -2.2,-1.459 -3.521,-1.459c-0.04,0 -0.08,-0.002 -0.12,-0.007Zm-4.9,-9.997c2.76,0 5,2.241 5,5c0,2.76 -2.24,5 -5,5c-2.76,0 -5,-2.24 -5,-5c0,-2.759 2.24,-5 5,-5Z" />
+                                    <path
+                                        d="M20,20.008l-1,-0c-0.552,-0 -1,0.448 -1,1c-0,0.552 0.448,1 1,1l1,-0l0,1c-0,0.552 0.448,1 1,1c0.552,-0 1,-0.448 1,-1l0,-1l1,-0c0.552,-0 1,-0.448 1,-1c-0,-0.552 -0.448,-1 -1,-1l-1,-0l0,-1c-0,-0.552 -0.448,-1 -1,-1c-0.552,-0 -1,0.448 -1,1l0,1Z" />
+                                </svg>
+                                <span class="details-box-title">Patient</span>
+                            </div>
+                            <div class="mt-5 mb-3 patient-count">
+                                <div class="mx-3 count">1,863</div>
+                            </div>
+                            <div class="mx-2">
+                                <div class="last-7-days">Last 7 days</div>
+                            </div>
+                        </div>
+                        <!-- INJECT-DETAILS -->
+                        <div class="m-4 rounded-2xl inject-details-box">
+                            <div class="flex justify-evenly items-center mt-1 w-full h-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide-syringe lucide">
+                                    <path d="m18 2 4 4" />
+                                    <path d="m17 7 3-3" />
+                                    <path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5" />
+                                    <path d="m9 11 4 4" />
+                                    <path d="m5 19-3 3" />
+                                    <path d="m14 4 6 6" />
+                                </svg>
+                                <span class="details-box-title">Inject</span>
+                            </div>
+                            <div class="mt-5 mb-3 patient-count">
+                                <div class="mx-3 count">363</div>
+                            </div>
+                            <div class="mx-2">
+                                <div class="last-7-days">Last 7 days</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- --------------------------- -->
+
+                    <div class="grid grid-col-2">
+                        <!-- REPORT-DETAILS -->
+                        <div class="m-4 rounded-2xl report-details-box">
+                            <div class="flex justify-evenly items-center mt-1 w-full h-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-hand-heart">
+                                    <path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16" />
+                                    <path
+                                        d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" />
+                                    <path d="m2 15 6 6" />
+                                    <path
+                                        d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z" />
+                                </svg>
+                                <span class="details-box-title">Report</span>
+                            </div>
+                            <div class="mt-5 mb-3 patient-count">
+                                <div class="mx-3 count">863</div>
+                            </div>
+                            <div class="mx-2">
+                                <div class="last-7-days">Last 7 days</div>
+                            </div>
+                        </div>
+                        <!-- SURGERY-DETAILS -->
+                        <div class="m-4 rounded-2xl surgery-details-box">
+                            <div class="flex justify-evenly items-center mt-1 w-full h-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-stethoscope">
+                                    <path d="M11 2v2" />
+                                    <path d="M5 2v2" />
+                                    <path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1" />
+                                    <path d="M8 15a6 6 0 0 0 12 0v-3" />
+                                    <circle cx="20" cy="10" r="2" />
+                                </svg>
+                                <span class="details-box-title">Surgery</span>
+                            </div>
+                            <div class="mt-5 mb-3 patient-count">
+                                <div class="mx-3 count">163</div>
+                            </div>
+                            <div class="mx-2">
+                                <div class="last-7-days">Last 7 days</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PATIENT-VIST_BY-DEPARTMENT-CHART -->
+            <div class="grid grid-cols-1 bg-slate-50 p-2 rounded h-fit side">
+                <app-patient-visit-by-department-chart></app-patient-visit-by-department-chart>
+            </div>
+
+        </div>
+
+        <div class="grid grid-cols-3">
+               
+            <div class="grid grid-cols-2 col-span-2 bg-slate-50 mx-4 my-4 p-2 rounded">
+
+                <!-- PATIENT-VISIT-CHART -->
+                <div class="flex justify-center">
+                    <app-average-patient-visit-chart></app-average-patient-visit-chart>
+                </div>
+
+                <!-- MONTHLY-VISIT -->
+                <div class="grid grid-cols-2 items-center">
+                    <div>
+                        <div class="m-4 rounded-2xl monthly-patient-box">
+                            <div class="flex justify-evenly items-center mt-1 w-full h-10">
+                                <svg fill="#000000" width="33px" height="33px" viewBox="0 0 32 32"
+                                    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+                                    version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path
+                                        d="M9.731,14.075c-1.387,0.252 -2.676,0.921 -3.687,1.932c-1.309,1.309 -2.044,3.084 -2.044,4.935l0,4.039c0,1.657 1.343,3 3,3c4.184,-0 13.816,-0 18,-0c1.657,-0 3,-1.343 3,-3l0,-4.039c0,-1.851 -0.735,-3.626 -2.044,-4.935c-1.011,-1.011 -2.3,-1.68 -3.687,-1.932c0.468,-0.939 0.731,-1.997 0.731,-3.117c0,-3.863 -3.137,-7 -7,-7c-3.863,0 -7,3.137 -7,7c0,1.12 0.263,2.178 0.731,3.117Zm11.169,1.88c-1.262,1.239 -2.993,2.003 -4.9,2.003c-1.907,0 -3.638,-0.764 -4.9,-2.003c-0.04,0.005 -0.08,0.007 -0.12,0.007c-1.321,0 -2.588,0.525 -3.521,1.459c-0.934,0.934 -1.459,2.201 -1.459,3.521c0,0 0,4.039 0,4.039c0,0.552 0.448,1 1,1l18,-0c0.552,-0 1,-0.448 1,-1c-0,-0 0,-4.039 0,-4.039c0,-1.32 -0.525,-2.587 -1.459,-3.521c-0.933,-0.934 -2.2,-1.459 -3.521,-1.459c-0.04,0 -0.08,-0.002 -0.12,-0.007Zm-4.9,-9.997c2.76,0 5,2.241 5,5c0,2.76 -2.24,5 -5,5c-2.76,0 -5,-2.24 -5,-5c0,-2.759 2.24,-5 5,-5Z" />
+                                    <path
+                                        d="M20,20.008l-1,-0c-0.552,-0 -1,0.448 -1,1c-0,0.552 0.448,1 1,1l1,-0l0,1c-0,0.552 0.448,1 1,1c0.552,-0 1,-0.448 1,-1l0,-1l1,-0c0.552,-0 1,-0.448 1,-1c-0,-0.552 -0.448,-1 -1,-1l-1,-0l0,-1c-0,-0.552 -0.448,-1 -1,-1c-0.552,-0 -1,0.448 -1,1l0,1Z" />
+                                </svg>
+                                <span class="monthly-patient-title">This Month</span>
+                            </div>
+                            <div class="mt-5 mb-3 patient-count">
+                                <div class="mx-3 count">12.9K</div>
+                            </div>
+                            <div class="mx-2">
+                                <div class="percentage">-3.1</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- YEARLY-VISIT -->
+                    <div>
+                        <div class="m-4 rounded-2xl monthly-patient-box">
+                            <div class="flex justify-evenly items-center mt-1 w-full h-10">
+                                <svg fill="#000000" width="33px" height="33px" viewBox="0 0 32 32"
+                                    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+                                    version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path
+                                        d="M9.731,14.075c-1.387,0.252 -2.676,0.921 -3.687,1.932c-1.309,1.309 -2.044,3.084 -2.044,4.935l0,4.039c0,1.657 1.343,3 3,3c4.184,-0 13.816,-0 18,-0c1.657,-0 3,-1.343 3,-3l0,-4.039c0,-1.851 -0.735,-3.626 -2.044,-4.935c-1.011,-1.011 -2.3,-1.68 -3.687,-1.932c0.468,-0.939 0.731,-1.997 0.731,-3.117c0,-3.863 -3.137,-7 -7,-7c-3.863,0 -7,3.137 -7,7c0,1.12 0.263,2.178 0.731,3.117Zm11.169,1.88c-1.262,1.239 -2.993,2.003 -4.9,2.003c-1.907,0 -3.638,-0.764 -4.9,-2.003c-0.04,0.005 -0.08,0.007 -0.12,0.007c-1.321,0 -2.588,0.525 -3.521,1.459c-0.934,0.934 -1.459,2.201 -1.459,3.521c0,0 0,4.039 0,4.039c0,0.552 0.448,1 1,1l18,-0c0.552,-0 1,-0.448 1,-1c-0,-0 0,-4.039 0,-4.039c0,-1.32 -0.525,-2.587 -1.459,-3.521c-0.933,-0.934 -2.2,-1.459 -3.521,-1.459c-0.04,0 -0.08,-0.002 -0.12,-0.007Zm-4.9,-9.997c2.76,0 5,2.241 5,5c0,2.76 -2.24,5 -5,5c-2.76,0 -5,-2.24 -5,-5c0,-2.759 2.24,-5 5,-5Z" />
+                                    <path
+                                        d="M20,20.008l-1,-0c-0.552,-0 -1,0.448 -1,1c-0,0.552 0.448,1 1,1l1,-0l0,1c-0,0.552 0.448,1 1,1c0.552,-0 1,-0.448 1,-1l0,-1l1,-0c0.552,-0 1,-0.448 1,-1c-0,-0.552 -0.448,-1 -1,-1l-1,-0l0,-1c-0,-0.552 -0.448,-1 -1,-1c-0.552,-0 -1,0.448 -1,1l0,1Z" />
+                                </svg>
+                                <span class="monthly-patient-title">This Year</span>
+                            </div>
+                            <div class="mt-5 mb-3 patient-count">
+                                <div class="mx-3 count">12.9K</div>
+                            </div>
+                            <div class="mx-2">
+                                <div class="percentage">+2.4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-span-1" style="background-color: rgb(82, 82, 79);">
+                ......
+            </div>
+        </div>
+
+        <div class="grid grid-cols-3 ">
+            <div class="grid grid-cols-4 col-span-2 mx-4 rounded bg-slate-50">
+                <!-- PATIENT-VISIT-BY-GENDER -->
+                <div class="flex justify-center items-center col-span-2 border-slate-100 rounded p-2" >
+                    <app-patient-visit-by-gender-chart></app-patient-visit-by-gender-chart>
+                </div>
+
+                <div class="col-span-2">
+                    <!-- MALE-PATIENT-VISIT-CHART -->
+                    <div class="flex justify-center items-center h-1/2 p-3">
+                        <app-male-patient-vist-chart></app-male-patient-vist-chart>
+                    </div>
+                    <!-- FEMALE-PATIENT-VISIT-CHART -->
+                    <div class="flex justify-center h-1/2 p-3">
+                        <app-female-patient-vist-chart></app-female-patient-vist-chart>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="gap-4 grid grid-cols-3 mt-2 mb-4">
+            <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 h-24">
+                <p class="text-2xl text-gray-400 dark:text-gray-500">
+                    <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 1v16M1 9h16" />
+                    </svg>
+                </p>
+            </div>
+            <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 rounded h-24">
+                <p class="text-2xl text-gray-400 dark:text-gray-500">
+                    <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 1v16M1 9h16" />
+                    </svg>
+                </p>
+            </div>
+            <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 rounded h-24">
+                <p class="text-2xl text-gray-400 dark:text-gray-500">
+                    <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 1v16M1 9h16" />
+                    </svg>
+                </p>
+            </div>
+        </div>
+        <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 mb-4 rounded h-48">
+            <p class="text-2xl text-gray-400 dark:text-gray-500">
+                <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 18 18">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                </svg>
+            </p>
+        </div>
+        <div class="gap-4 grid grid-cols-2 mb-4">
+            <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 rounded h-28">
+                <p class="text-2xl text-gray-400 dark:text-gray-500">
+                    <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 1v16M1 9h16" />
+                    </svg>
+                </p>
+            </div>
+            <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 rounded h-28">
+                <p class="text-2xl text-gray-400 dark:text-gray-500">
+                    <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 1v16M1 9h16" />
+                    </svg>
+                </p>
+            </div>
+            <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 rounded h-28">
+                <p class="text-2xl text-gray-400 dark:text-gray-500">
+                    <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 1v16M1 9h16" />
+                    </svg>
+                </p>
+            </div>
+            <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 rounded h-28">
+                <p class="text-2xl text-gray-400 dark:text-gray-500">
+                    <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 1v16M1 9h16" />
+                    </svg>
+                </p>
+            </div>
+        </div>
+        <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 mb-4 rounded h-48">
+            <p class="text-2xl text-gray-400 dark:text-gray-500">
+                <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 18 18">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                </svg>
+            </p>
+        </div>
+        <div class="gap-4 grid grid-cols-2">
+            <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 rounded h-28">
+                <p class="text-2xl text-gray-400 dark:text-gray-500">
+                    <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 1v16M1 9h16" />
+                    </svg>
+                </p>
+            </div>
+            <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 rounded h-28">
+                <p class="text-2xl text-gray-400 dark:text-gray-500">
+                    <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 1v16M1 9h16" />
+                    </svg>
+                </p>
+            </div>
+            <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 rounded h-28">
+                <p class="text-2xl text-gray-400 dark:text-gray-500">
+                    <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 1v16M1 9h16" />
+                    </svg>
+                </p>
+            </div>
+            <div class="flex justify-center items-center bg-gray-50 dark:bg-gray-800 rounded h-28">
+                <p class="text-2xl text-gray-400 dark:text-gray-500">
+                    <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 1v16M1 9h16" />
+                    </svg>
+                </p>
+            </div>
+        </div> -->
+    </div>
+</div>

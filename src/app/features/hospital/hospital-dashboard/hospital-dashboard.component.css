@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'MergeOne-Regular';
+  src: url('/fonts/MergeOne-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Manjari-Bold';
+  src: url('/fonts/Manjari-Bold.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.hopital-logo {
+  height: 70px;
+}
+
+.hospital-name {
+  font-family: MergeOne-Regular;
+}
+
+.dashboard-icon,
+.profile-edit-icon,
+.mail-icon,
+.appointment-icon,
+.details-icon,
+.logout-icon {
+  margin-top: 5%;
+  height: 8%;
+  align-items: center;
+  color: #9999ff;
+}
+
+.dashboard-icon:hover,
+.profile-edit-icon:hover,
+.mail-icon:hover,
+.appointment-icon:hover,
+.details-icon:hover,
+.logout-icon:hover {
+  color: #7a7acc;
+}
+
+.main-body {
+  background-color: #ebeef0;
+  border-radius: 0.5rem;
+}
+
+#datepicker-inline {
+  width: 100%;
+}
+
+/* .sub {
+  background-color: aqua;
+} */
+
+.patient-details-box {
+  background-color: #e1cef7;
+}
+
+.inject-details-box {
+  background-color: #d8f9a3;
+}
+
+.report-details-box {
+  background-color: #fcebcf;
+}
+
+.surgery-details-box {
+  background-color: #b6d5f9;
+}
+
+.patient-details-box svg {
+  padding: 2%;
+  fill: #6e6eb8;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+}
+
+.inject-details-box svg {
+  padding: 3%;
+  fill: #d8f9a3;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+}
+
+.report-details-box svg {
+  padding: 3%;
+  stroke: #e6b436;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+}
+
+.surgery-details-box svg {
+  padding: 3%;
+  stroke: #618bba;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+}
+
+.details-box-title {
+  font-family: Manjari-Bold;
+  font-size: 20px;
+}
+
+.count {
+  font-family: 'Lato', sans-serif;
+  font-weight: 550;
+  font-size: 27px;
+}
+
+.last-7-days {
+  font-family: 'Raleway', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.patient-vist-by-gender-box{
+  background-color: #f9f9f9;
+}

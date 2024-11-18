@@ -1,0 +1,28 @@
+<div class="max-w-sm w-full bg-white rounded-lg shadow p-4 md:p-6 patient-visit-by-gender-chart">
+    <div class="flex justify-between mb-5">
+        <div>
+          <p class="text-gray-900 dark:text-white text-2xl leading-none">Patient Visit By Gender</p>
+        </div>
+    </div>
+    <div>
+      <!-- ApexChart Component -->
+      <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [tooltip]="chartOptions.tooltip"
+        [xaxis]="chartOptions.xaxis"
+        [yaxis]="chartOptions.yaxis"
+        [stroke]="chartOptions.stroke"
+        [grid]="chartOptions.grid"
+        [dataLabels]="chartOptions.dataLabels"
+      ></apx-chart>
+    </div>
+    <div class="grid grid-cols-1 items-center border-gray-200 border-t  justify-between mt-2.5">
+      <div class="pt-5">
+        <a href="#" class="px-5 py-2.5 text-sm font-medium text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          View full report
+        </a>
+      </div>
+    </div>
+  </div>
+  
