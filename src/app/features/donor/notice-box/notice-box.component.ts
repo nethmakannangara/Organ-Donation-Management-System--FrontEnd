@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-notice-box',
   standalone: true,
-  imports: [NgIf,RouterLink,CommonModule,FormsModule],
+  imports: [RouterLink,CommonModule,FormsModule],
   templateUrl: './notice-box.component.html',
   styleUrl: './notice-box.component.css'
 })

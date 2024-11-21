@@ -1,0 +1,185 @@
+<div class="p-3 lg:ml-32 mt-10 sm:ml-1">
+    <div class="p-4 border-2 border-gray-200 border-separate rounded-lg  mt-14">
+
+        <div class="top-0">
+
+            <div class="form-top w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-move-left cursor-pointer m-1">
+                    <path d="M6 8L2 12L6 16" />
+                    <path d="M2 12H22" />
+                </svg>
+                <hr>
+            </div>
+
+            <div class="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1">
+
+                <div class="patient-details-side col-span-1 sm mt-4 mb-4">
+                    <div class="flex items-center justify-center my-5 patient-pic">
+                        <img src="/img/profile-photo.jpg" alt="" class="w-28 h-28">
+                    </div>
+
+                    <div class="flex items-center mt-2 PATIENT-BIO-section">
+                        <div class="ml-4 mr-3">
+                            <svg fill="#000000" width="26px" height="26px" viewBox="0 0 32.00 32.00"
+                                style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+                                version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                stroke="#000000" stroke-width="0.00032">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke="#CCCCCC" stroke-width="0.064"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        d="M9.731,14.075c-1.387,0.252 -2.676,0.921 -3.687,1.932c-1.309,1.309 -2.044,3.084 -2.044,4.935l0,4.039c0,1.657 1.343,3 3,3c4.184,-0 13.816,-0 18,-0c1.657,-0 3,-1.343 3,-3l0,-4.039c0,-1.851 -0.735,-3.626 -2.044,-4.935c-1.011,-1.011 -2.3,-1.68 -3.687,-1.932c0.468,-0.939 0.731,-1.997 0.731,-3.117c0,-3.863 -3.137,-7 -7,-7c-3.863,0 -7,3.137 -7,7c0,1.12 0.263,2.178 0.731,3.117Zm11.169,1.88c-1.262,1.239 -2.993,2.003 -4.9,2.003c-1.907,0 -3.638,-0.764 -4.9,-2.003c-0.04,0.005 -0.08,0.007 -0.12,0.007c-1.321,0 -2.588,0.525 -3.521,1.459c-0.934,0.934 -1.459,2.201 -1.459,3.521c0,0 0,4.039 0,4.039c0,0.552 0.448,1 1,1l18,-0c0.552,-0 1,-0.448 1,-1c-0,-0 0,-4.039 0,-4.039c0,-1.32 -0.525,-2.587 -1.459,-3.521c-0.933,-0.934 -2.2,-1.459 -3.521,-1.459c-0.04,0 -0.08,-0.002 -0.12,-0.007Zm-4.9,-9.997c2.76,0 5,2.241 5,5c0,2.76 -2.24,5 -5,5c-2.76,0 -5,-2.24 -5,-5c0,-2.759 2.24,-5 5,-5Z">
+                                    </path>
+                                    <path
+                                        d="M20,20.008l-1,-0c-0.552,-0 -1,0.448 -1,1c-0,0.552 0.448,1 1,1l1,-0l0,1c-0,0.552 0.448,1 1,1c0.552,-0 1,-0.448 1,-1l0,-1l1,-0c0.552,-0 1,-0.448 1,-1c-0,-0.552 -0.448,-1 -1,-1l-1,-0l0,-1c-0,-0.552 -0.448,-1 -1,-1c-0.552,-0 -1,0.448 -1,1l0,1Z">
+                                    </path>
+                                </g>
+                            </svg>
+                        </div>
+                        <p>PATIENT BIO</p>
+                    </div>
+
+                    <div class="detalis flex items-center ml-6 my-3">
+                        <div class="name">{{patientInfo?.firstName}} {{patientInfo?.lastName}},</div>
+                        <div class="age mx-2">{{patientInfo?.age}}</div>
+                    </div>
+
+                    <div class="other-details ml-5">
+                        <div class="flex items-center my-2">
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                                    fill="#80ed99" stroke="#80ed99" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-circle">
+                                    <circle cx="12" cy="12" r="10" />
+                                </svg>
+                            </div>
+                            <p>Actively looking for a {{patientInfo?.organ}} donor</p>
+                        </div>
+
+                        <div class="flex items-center my-2">
+                            <div class="flex justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-map-pin-house">
+                                    <path
+                                        d="M15 22a1 1 0 0 1-1-1v-4a1 1 0 0 1 .445-.832l3-2a1 1 0 0 1 1.11 0l3 2A1 1 0 0 1 22 17v4a1 1 0 0 1-1 1z" />
+                                    <path
+                                        d="M18 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 .601.2" />
+                                    <path d="M18 22v-3" />
+                                    <circle cx="10" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <p>{{patientInfo?.address}}</p>
+                        </div>
+
+                        <div class="flex items-center my-2">
+                            <div class="flex justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                                    fill="#c1121f" stroke="#c1121f" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-droplet">
+                                    <path
+                                        d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
+                                </svg>
+                            </div>
+                            <p>{{patientInfo?.bloodType}}</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="flex items-center mt-7 mb-4 ml-5 transplanet-section">
+                        <div class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-hospital">
+                                <path d="M12 6v4" />
+                                <path d="M14 14h-4" />
+                                <path d="M14 18h-4" />
+                                <path d="M14 8h-4" />
+                                <path d="M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2" />
+                                <path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18" />
+                            </svg>
+                        </div>
+                        <p>TRANPLANT CENTER</p>
+                    </div>
+
+                    <div class="ml-5 mb-4 transplant-center-label">
+                        LinkLife Transplant Center
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 lg:col-span-2 sm:col-span-1 mt-4 mb-4">
+
+                    <div
+                        class="top-bar grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 lg:my-7 md:my-7 md:mx-3 lg:mx-3">
+
+                        <div class="md:col-span-1 lg:col-span-1 flex justify-center items-center sm:m-1">
+                            <img src="/img/donation-form-img.png" alt="" class="w-32 h-32">
+                        </div>
+                        <div class="lg:col-span-3 md:col-span-3">
+                            <div class="header-title flex justify-center items-center">
+                                Becoming a potental donor for {{patientInfo?.firstName}} {{patientInfo?.lastName}}
+                            </div>
+                            <div class="form-header-body flex justify-center px-9">
+                                Hi Supporter,before we move forword in the process,let's create your donor identity and
+                                check if you're eligible and compatible to donate a {{patientInfo?.organ}} to {{patientInfo?.firstName}}.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="max-w-md mx-auto">
+
+                            <div class="relative z-0 w-full mb-5 group">
+                                <input type="email" name="floating_email" id="floating_email"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                    placeholder=" " required />
+                                <label for="floating_email"
+                                    class="peer-focus:font-medium absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+                            </div>
+                            <div class="grid md:grid-cols-2 md:gap-6">
+                                <div class="relative z-0 w-full mb-5 group">
+                                    <input type="text" name="floating_first_name" id="floating_first_name"
+                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                        placeholder=" " required />
+                                    <label for="floating_first_name"
+                                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
+                                        name</label>
+                                </div>
+                                <div class="relative z-0 w-full mb-5 group">
+                                    <input type="text" name="floating_last_name" id="floating_last_name"
+                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                        placeholder=" " required />
+                                    <label for="floating_last_name"
+                                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
+                                        name</label>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 md:gap-6">
+                                <div class="relative z-0 w-full mb-5 group">
+                                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone"
+                                        id="floating_phone"
+                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                        placeholder=" " required />
+                                    <label for="floating_phone"
+                                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone
+                                        number</label>
+                                </div>
+                                <div class="relative z-0 w-full mb-5 group">
+                                    <input type="text" name="floating_company" id="floating_company"
+                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                        placeholder=" " required />
+                                    <label for="floating_company"
+                                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Blood Type </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Check Compatibility</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

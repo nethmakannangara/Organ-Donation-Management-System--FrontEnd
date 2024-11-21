@@ -1,0 +1,14 @@
+<div class="otp_section">
+    <label for="">Verify Code</label><br>
+    <p class="mt-2 mb-4">Please check you'r email</p>
+    <div class="d-flex flex-row number-input-panel">
+        <input type="text" id="textfiled-1" class="otp_textFiled m-3" [(ngModel)] = "otp[0]" (input)="onInputChange($event,0)" maxlength="1" pattern="[0-9]" autofocus required>
+        <input type="text" id="textfiled-2" class="otp_textFiled m-3" [(ngModel)] = "otp[1]" (input)="onInputChange($event,1)" maxlength="1" pattern="[0-9]" required>
+        <input type="text" id="textfiled-3" class="otp_textFiled m-3" [(ngModel)] = "otp[2]" (input)="onInputChange($event,2)" maxlength="1" pattern="[0-9]" required>
+        <input type="text" id="textfiled-4" class="otp_textFiled m-3" [(ngModel)] = "otp[3]" (input)="onInputChange($event,3)" maxlength="1" pattern="[0-9]" required>
+    </div>
+    <div class="text-center mt-3 mb-5">
+        <span class="verify_button" (click)="checkVerificationCode()">Verify Me</span>
+        <p class="otp_resend_option mt-5">Resend Verify Code</p>
+    </div>
+</div>
