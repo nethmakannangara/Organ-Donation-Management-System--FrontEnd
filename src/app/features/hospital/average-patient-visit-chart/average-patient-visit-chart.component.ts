@@ -12,6 +12,8 @@ export class AveragePatientVisitChartComponent {
 
   chartOptions: ApexOptions = {
     chart: {
+      width:"100%",
+      parentHeightOffset: 3,
       type: 'bar',
       height: '320px',
       fontFamily: 'Inter, sans-serif',

@@ -1,0 +1,12 @@
+<div class=" flex justify-center m-1">
+    <div class="donation-card m-4" >
+        <h2>URGENT ORGAN DONATION REQUEST</h2>
+        <p><strong>Patient's Age:</strong> {{notice.age}} years</p>
+        <p><strong>Organ Needed:</strong> {{notice.organ}}</p>
+        <p><strong>Urgency:</strong> {{notice.status}}</p>
+        <p class="description">
+            {{notice.description}}
+        </p>
+        <button class="request-button" (click)="getNoticeInfo(notice.announcementId)">Request to Donate</button>
+    </div>
+</div>

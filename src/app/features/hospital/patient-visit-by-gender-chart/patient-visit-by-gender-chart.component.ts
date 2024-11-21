@@ -16,6 +16,8 @@ export class PatientVisitByGenderChartComponent implements OnInit {
 
   public chartOptions: ApexOptions = {
     chart: {
+      width:"100%",
+      height:"250px",
       type: "line",
       fontFamily: "Inter, sans-serif",
       dropShadow: {

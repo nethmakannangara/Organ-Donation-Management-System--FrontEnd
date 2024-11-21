@@ -1,0 +1,9 @@
+<div class="p-3 lg:ml-32 mt-10 sm:ml-1">
+    <div class="p-4 border-2 border-gray-200 border-separate rounded-lg  mt-14">
+        <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="flex items-center justify-center h-fit rounded bg-gray-50 m-2" *ngFor="let notice of announcementList">
+                <app-notice-box [notice]="notice"></app-notice-box>
+            </div>
+        </div>
+    </div>
+</div>
