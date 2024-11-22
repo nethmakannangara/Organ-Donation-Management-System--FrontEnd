@@ -1,159 +1,92 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnDestroy, OnInit } from '@angular/core';
-import { ApexOptions } from 'apexcharts';
-import ApexCharts from 'apexcharts';
-import { NgApexchartsModule } from 'ng-apexcharts';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Chart, ChartConfiguration } from 'chart.js/auto';
 
 @Component({
   selector: 'app-patient-visit-by-department-chart',
   standalone: true,
-  imports: [NgApexchartsModule],
   templateUrl: './patient-visit-by-department-chart.component.html',
   styleUrl: './patient-visit-by-department-chart.component.css'
 })
-export class PatientVisitByDepartmentChartComponent implements OnInit, OnDestroy{
+export class PatientVisitByDepartmentChartComponent implements OnInit, OnDestroy {
+  private chart!: Chart;
 
-  private chart !: ApexCharts;
-
-
-  constructor() {}
+  private defaultData = {
+    cardiology: [35.1, 23.5, 2.4, 5.4],
+    neurology: [25.1, 26.5, 1.4, 3.4],
+    dermatology: [45.1, 27.5, 8.4, 2.4]
+  };
 
   ngOnInit(): void {
-    this.chart = new ApexCharts(document.getElementById('chart')!,this.chartOptions);
-    this.chart.render();
+    this.createChart();
   }
 
   ngOnDestroy(): void {
-    if(this.chart){
+    if (this.chart) {
       this.chart.destroy();
     }
   }
 
-  // ApexCharts options for the donut chart
-  public chartOptions: ApexOptions = {
-    series: [35.1, 23.5, 2.4, 5.4],
-    colors: ["#1C64F2", "#16BDCA", "#FDBA8C", "#E74694"],
-    chart: {
-      height: 320,
-      width: "100%",
-      type: "donut",
-    },
-    stroke: {
-      colors: ["transparent"],
-    },
-    plotOptions: {
-      pie: {
-        donut: {
-          labels: {
-            show: true,
-            name: {
-              show: true,
-              fontFamily: "Inter, sans-serif",
-              offsetY: 20,
-            },
-            total: {
-              showAlways: true,
-              show: true,
-              label: "Unique visitors",
-              fontFamily: "Inter, sans-serif",
-              formatter: function (w) {
-                const sum = w.globals.seriesTotals.reduce((a:number, b:number) => a + b, 0);
-                return '$' + sum + 'k';
-              },
-            },
-            value: {
-              show: true,
-              fontFamily: "Inter, sans-serif",
-              offsetY: -20,
-              formatter: function (value : string) {
-                return value + "k";
-              },
-            },
+  private createChart(): void {
+    const ctx = document.getElementById('patientVisitChart') as HTMLCanvasElement;
+    
+    const config: ChartConfiguration = {
+      type: 'doughnut',
+      data: {
+        labels: ['Emergency', 'Routine', 'Follow-up', 'Consultation'],
+        datasets: [{
+          data: this.defaultData.cardiology,
+          backgroundColor: [
+            '#1C64F2',
+            '#16BDCA',
+            '#FDBA8C',
+            '#E74694'
+          ],
+          hoverOffset: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
           },
-          size: "80%",
+          title: {
+            display: true,
+            text: 'Patient Visits Distribution'
+          }
         },
-      },
-    },
-    grid: {
-      padding: {
-        top: -2,
-      },
-    },
-    labels: ["Direct", "Sponsor", "Affiliate", "Email marketing"],
-    dataLabels: {
-      enabled: false,
-    },
-    legend: {
-      position: "bottom",
-      fontFamily: "Inter, sans-serif",
-    },
-    yaxis: {
-      labels: {
-        formatter: function (value:number) {
-          return value + "k";
-        },
-      },
-    },
-    xaxis: {
-      labels: {
-        formatter: function (value:string) {
-          return value + "k";
-        },
-      },
-      axisTicks: {
-        show: false,
-      },
-      axisBorder: {
-        show: false,
-      },
-    },
-  };
+      }
+    };
 
-  // Handle the checkbox change event
+    this.chart = new Chart(ctx, config);
+  }
+
   handleCheckboxChange(event: Event): void {
     const checkbox = event.target as HTMLInputElement;
     
-    if(this.chart){
-      const currentSeries = (this.chart as any).w.globals.series;
-      const updatedSeries :number[] = [...currentSeries];
+    if (this.chart) {
+      let newData: number[];
 
       if (checkbox.checked) {
         switch (checkbox.value) {
-          case 'desktop':
-            updatedSeries[0] = 15.1;
-            updatedSeries[1] = 22.5;
-            updatedSeries[2] = 4.4;
-            updatedSeries[3] = 8.4;
+          case 'cardiology':
+            newData = this.defaultData.cardiology;
             break;
-          case 'tablet':
-            updatedSeries[0] = 25.1;
-            updatedSeries[1] = 26.5;
-            updatedSeries[2] = 1.4;
-            updatedSeries[3] = 3.4;
+          case 'neurology':
+            newData = this.defaultData.neurology;
             break;
-          case 'mobile':
-            updatedSeries[0] = 45.1;
-            updatedSeries[1] = 27.5;
-            updatedSeries[2] = 8.4;
-            updatedSeries[3] = 2.4;
+          case 'dermatology':
+            newData = this.defaultData.dermatology;
             break;
           default:
-            updatedSeries[0] = 35.1;
-            updatedSeries[1] = 23.5;
-            updatedSeries[2] = 2.4;
-            updatedSeries[3] = 5.4;
+            newData = this.defaultData.cardiology;
         }
       } else {
-        // Reset to default values if checkbox is unchecked
-        updatedSeries[0] = 35.1;
-        updatedSeries[1] = 23.5;
-        updatedSeries[2] = 2.4;
-        updatedSeries[3] = 5.4;
+        newData = this.defaultData.cardiology;
       }
 
-      // Update the chart with new series data
-      this.chart.updateSeries(updatedSeries);
+      this.chart.data.datasets[0].data = newData;
+      this.chart.update();
     }
-    
   }
-
 }

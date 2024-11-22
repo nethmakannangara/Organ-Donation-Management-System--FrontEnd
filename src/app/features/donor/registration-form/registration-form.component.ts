@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-registration-form',
@@ -11,8 +12,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegistrationFormComponent {
 
-  constructor(private http: HttpClient) { 
-    // this.donor.email = loginService.getLoginInfo().email;
+  constructor(private http: HttpClient,private route:ActivatedRoute) { 
+    this.route.queryParams.subscribe((params) => {
+      this.donor.email = params['email'];
+    });
   }
 
   public donor: any = {

@@ -1,17 +1,13 @@
-<div class="donor_login_popup flex justify-center items-center mt-10">
-    <div class="main_pannel flex justify-center mt-5 mb-5">
-        <div class="box mt-5 mb-5"></div>
-        <div class="left_side flex justify-center items-center mt-5 mb-5 md:w-full text-center">
-            <img src="img/donor_login_page_image.png" alt="" class="login_image img-fluid">
-        </div>
-        <div class="right_side flex mt-5 mb-5 w-full">
-            <div class="login_panel">
-                <div class="option_row flex justify-center space-x-4">
-                    <span>Sign Up</span>
-                    <span>Sign in</span>
-                </div>
-                <router-outlet></router-outlet>
+<section class="bg-gray-50 dark:bg-gray-900">
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 ">
+            <img class="w-28 h-28 mr-2" src="/img/hospital-logo.png" alt="logo">
+            Link Life    
+        </a>
+        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 ">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <router-outlet></router-outlet>              
             </div>
         </div>
     </div>
-</div>
+  </section>

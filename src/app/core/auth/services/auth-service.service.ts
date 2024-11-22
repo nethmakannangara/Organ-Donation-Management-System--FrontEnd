@@ -14,6 +14,7 @@ export class AuthServiceService {
 
    // Login function: sends username and password to the backend
   login(loginInfo: any): Observable<any> {
+    console.log(loginInfo)
     return this.http.post<any>(`http://localhost:8080/login`, loginInfo);
   }
 

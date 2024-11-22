@@ -1,0 +1,115 @@
+<div class="bg-blue-500 text-white py-6">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold">Organ Donation Management System</h1>
+        <div>
+            <ul class="flex space-x-8">
+                <li><a href="#" class="hover:text-blue-300">Home</a></li>
+                <li><a href="#why-donate" class="hover:text-blue-300">Why Donate?</a></li>
+                <li><a href="#what-donate" class="hover:text-blue-300">What Can You Donate?</a></li>
+                <li><a href="#donors" class="hover:text-blue-300">For Donors</a></li>
+                <li><a href="#hospitals" class="hover:text-blue-300">For Hospitals (Admin)</a></li>
+                <li><a href="#contact-us" class="hover:text-blue-300">Contact Us</a></li>
+                <li><a href="#" class="hover:text-blue-300" uterLink="/login">Sign In | Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<div class="bg-cover bg-center text-white py-32" style="background-image: url('hero-image.jpg');">
+    <div class="container mx-auto text-center">
+        <h1 class="text-5xl font-bold mb-4">Save Lives by Donating Organs</h1>
+        <p class="text-xl mb-6">Your donation can bring hope, health, and new life to others.</p>
+        <a href="#why-donate" class="bg-orange-500 text-white py-2 px-6 rounded-full text-lg hover:bg-orange-400">Learn How You Can Help</a>
+    </div>
+</div>
+
+<!-- Why Donate Section -->
+<div id="why-donate" class="py-16 bg-white text-center">
+    <h2 class="text-4xl font-bold mb-8">Why Should You Consider Donating?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 container mx-auto px-4">
+        <div class="space-y-4">
+            <img src="heart-icon.png" alt="Heart Icon" class="mx-auto h-16">
+            <h3 class="text-xl font-semibold">Make a Life-Saving Impact</h3>
+            <p class="text-gray-600">Each organ donation can save up to 8 lives and improve many others. Your decision to donate can give someone a second chance at life, reducing suffering and offering hope.</p>
+        </div>
+        <div class="space-y-4">
+            <img src="gift-icon.png" alt="Gift Icon" class="mx-auto h-16">
+            <h3 class="text-xl font-semibold">Donating is a Gift of Life</h3>
+            <p class="text-gray-600">Organ donation is a simple act that creates profound change. By donating, you're joining a community of lifesavers and offering the gift of health to people in need.</p>
+        </div>
+        <div class="space-y-4">
+            <img src="clock-icon.png" alt="Clock Icon" class="mx-auto h-16">
+            <h3 class="text-xl font-semibold">You Can Help Reduce the Waiting List</h3>
+            <p class="text-gray-600">Thousands of people are waiting for organ transplants. Your donation could make the difference and reduce the waiting time for many patients.</p>
+        </div>
+    </div>
+</div>
+
+<!-- What Can You Donate Section -->
+<div id="what-donate" class="py-16 bg-blue-50 text-center">
+    <h2 class="text-4xl font-bold mb-8">What Organs and Tissues Can You Donate?</h2>
+    <p class="text-xl text-gray-700 mb-12">You can donate various organs and tissues, either during your lifetime or after passing. Here are the organs you can donate:</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 container mx-auto px-4">
+        <div class="space-y-4">
+            <h3 class="text-xl font-semibold">Kidneys</h3>
+            <p class="text-gray-600">Life-saving for patients with kidney failure.</p>
+        </div>
+        <div class="space-y-4">
+            <h3 class="text-xl font-semibold">Heart</h3>
+            <p class="text-gray-600">Required by patients with heart failure.</p>
+        </div>
+        <div class="space-y-4">
+            <h3 class="text-xl font-semibold">Liver</h3>
+            <p class="text-gray-600">Can regenerate, saving multiple lives.</p>
+        </div>
+        <div class="space-y-4">
+            <h3 class="text-xl font-semibold">Lungs</h3>
+            <p class="text-gray-600">Helps patients with chronic lung diseases.</p>
+        </div>
+        <div class="space-y-4">
+            <h3 class="text-xl font-semibold">Pancreas</h3>
+            <p class="text-gray-600">Helps people with severe diabetes.</p>
+        </div>
+        <div class="space-y-4">
+            <h3 class="text-xl font-semibold">Corneas</h3>
+            <p class="text-gray-600">Restores vision for patients with blindness.</p>
+        </div>
+    </div>
+    <a href="#" class="bg-orange-500 text-white py-2 px-6 rounded-full text-lg hover:bg-orange-400 mt-8 inline-block" uterLink="/login" routerLink="/login">Register to Donate Now</a>
+</div>
+
+<!-- For Donors Section -->
+<div id="donors" class="bg-blue-500 text-white py-16 text-center">
+    <h2 class="text-4xl font-bold mb-4">Become an Organ Donor</h2>
+    <p class="text-xl mb-8">It’s simple, free, and can make a difference.</p>
+    <a href="#" class="bg-orange-500 text-white py-2 px-6 rounded-full text-lg hover:bg-orange-400" uterLink="/login">Register to Be a Donor</a>
+</div>
+
+<!-- For Hospitals Section -->
+<div id="hospitals" class="bg-white py-16 text-center">
+    <h2 class="text-4xl font-bold mb-4">Hospital Admin Dashboard</h2>
+    <p class="text-xl mb-8">Manage Donation Requests, Approvals, and Donor Lists</p>
+    <a href="#" class="bg-blue-500 text-white py-2 px-6 rounded-full text-lg hover:bg-blue-400" routerLink="/login">Log In to Your Admin Dashboard</a>
+</div>
+
+<!-- Contact Us Section -->
+<div id="contact-us" class="py-16 bg-white text-center">
+    <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+    <p class="text-xl mb-8">Have questions or want to get in touch with us? We’re here to help.</p>
+    <form class="max-w-lg mx-auto">
+        <input type="text" placeholder="Your Name" class="p-3 mb-4 w-full bg-gray-200 border border-gray-300 rounded-md">
+        <input type="email" placeholder="Your Email" class="p-3 mb-4 w-full bg-gray-200 border border-gray-300 rounded-md">
+        <textarea placeholder="Your Message" class="p-3 mb-4 w-full bg-gray-200 border border-gray-300 rounded-md"></textarea>
+        <button type="submit" class="bg-orange-500 text-white py-2 px-6 rounded-full text-lg hover:bg-orange-400">Send Message</button>
+    </form>
+</div>
+
+<!-- Footer Section -->
+<div class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2024 Organ Donation Management System | All Rights Reserved</p>
+    <p>
+        <a href="#" class="hover:text-orange-400">About Us</a> |
+        <a href="#" class="hover:text-orange-400">Privacy Policy</a> |
+        <a href="#" class="hover:text-orange-400">Terms of Service</a>
+    </p>

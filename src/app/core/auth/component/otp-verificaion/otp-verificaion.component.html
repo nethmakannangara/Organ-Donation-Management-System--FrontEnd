@@ -1,14 +1,31 @@
-<div class="otp_section">
-    <label for="">Verify Code</label><br>
-    <p class="mt-2 mb-4">Please check you'r email</p>
-    <div class="d-flex flex-row number-input-panel">
-        <input type="text" id="textfiled-1" class="otp_textFiled m-3" [(ngModel)] = "otp[0]" (input)="onInputChange($event,0)" maxlength="1" pattern="[0-9]" autofocus required>
-        <input type="text" id="textfiled-2" class="otp_textFiled m-3" [(ngModel)] = "otp[1]" (input)="onInputChange($event,1)" maxlength="1" pattern="[0-9]" required>
-        <input type="text" id="textfiled-3" class="otp_textFiled m-3" [(ngModel)] = "otp[2]" (input)="onInputChange($event,2)" maxlength="1" pattern="[0-9]" required>
-        <input type="text" id="textfiled-4" class="otp_textFiled m-3" [(ngModel)] = "otp[3]" (input)="onInputChange($event,3)" maxlength="1" pattern="[0-9]" required>
+<h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+    Enter OTP
+</h1>
+
+<form (ngSubmit)="verifyOtp()">
+    <div>
+        <label for="otp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter
+            4-digit OTP</label>
+        <input type="text" name="otp" id="otp"
+            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="1234" maxlength="4" required [(ngModel)]="inputOtp">
     </div>
-    <div class="text-center mt-3 mb-5">
-        <span class="verify_button" (click)="checkVerificationCode()">Verify Me</span>
-        <p class="otp_resend_option mt-5">Resend Verify Code</p>
+    <button type="submit"
+        class="w-full text-white mt-5 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-sky-600" (click)=" verifyOtp()">Verify
+        OTP</button>
+</form>
+
+<section class="bg-gray-50 dark:bg-gray-900">
+
+    <div *ngIf="isOtpMatch" id="toast-top-right"
+         class="fixed flex items-center w-full max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow top-5 right-5"
+         role="alert">
+      <div class="text-sm font-normal text-red-600">Invalid OTP...</div>
     </div>
-</div>
+  
+    <div *ngIf="isOtpVerified" id="toast-top-right"
+         class="fixed flex items-center w-full max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow top-20 right-5"
+         role="alert">
+      <div class="text-sm font-normal text-green-600">OTP Matched...</div>
+    </div>
+  </section>

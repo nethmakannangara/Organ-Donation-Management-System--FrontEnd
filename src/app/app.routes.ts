@@ -9,6 +9,7 @@ import { MainComponent } from './core/auth/component/main/main.component';
 import { LoginComponent } from './core/auth/component/login/login.component';
 import { OtpVerificaionComponent } from './core/auth/component/otp-verificaion/otp-verificaion.component';
 import { RegistrationFormComponent } from './features/donor/registration-form/registration-form.component';
+import { HomePageComponent } from './features/home-page/home-page.component';
 
 export const routes: Routes = [
     {
@@ -29,11 +30,11 @@ export const routes: Routes = [
         component:HospitalDashboardComponent
     },
     {
-        path:'',
+        path:'login',
         component:MainComponent,
         children:[
             {
-                path:'login',
+                path:'',
                 component:LoginComponent
             },
             {
@@ -45,6 +46,10 @@ export const routes: Routes = [
     {
         path:'donor-registration-form',
         component:RegistrationFormComponent
+    },
+    {
+        path:'',
+        component:HomePageComponent
     }
 ];
 

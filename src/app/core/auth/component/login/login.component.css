@@ -5,25 +5,26 @@
 
 .details_section {
     width: 100%;
+    height: 100%;
     background-color: #f8f8f8;
     margin-top: 2%;
     border-radius: 0.7rem;
 }
 
 .details_section label {
-    margin-left: 6%;
-    margin-top: 8%;
+    margin-left: 2%;
+    margin-top: 5%;
     margin-bottom: 2%;
     font-family: "Varela Round", sans-serif;
     font-weight: 300;
-    color: #4E6BF4;
-    font-size: 18px;
+    color: #0a2fe9;
+    font-size: 14px;
     user-select: none;
 }
 
 .details_section input {
     margin-left: 9%;
-    width: 80%;
+    width: 60%;
     height: 28px;
     outline: none;
     border: 10px #E0DDDD;
@@ -32,13 +33,13 @@
     font-style: normal;
 }
 
-.details_section input::placeholder {
+/* .details_section input::placeholder {
     font-size: 15px;
     font-weight: 300;
     font-style: normal;
-}
+} */
 
-.details_section span {
+/* .details_section span {
     background-color: #7288F3;
     padding: 5px 25px;
     border-radius: 0.5rem;
@@ -48,25 +49,25 @@
     font-weight: 400;
     font-style: normal;
     user-select: none;
-}
+} */
 
-.details_section span:hover {
+/* .details_section span:hover {
     background-color: #4E6BF4;
-}
+} */
 
-.details_section span:active {
+/* .details_section span:active {
     transform: scale(0.95);
     background-color: #3b4f8b;
-}
+} */
 
-.signIn_option {
+/* .signIn_option {
     user-select: none;
     color: #ff0000;
     cursor: pointer;
     font-family: "Inria Sans", sans-serif;
     font-size: 16px;
-}
+} */
 
-.signIn_option:active {
+/* .signIn_option:active {
     color: #851111;
-}
+} */

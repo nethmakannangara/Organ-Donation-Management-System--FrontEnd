@@ -7,6 +7,6 @@
         <p class="description">
             {{notice.description}}
         </p>
-        <button class="request-button" (click)="getNoticeInfo(notice.announcementId)" routerLink="/request-form" [queryParams]="{ noticeId: notice.announcementId }">Request to Donate</button>
+        <button class="request-button" (click)="getNoticeInfo(notice.announcementId)" routerLink="/bonor-dashboard/request-form" [queryParams]="{ noticeId: notice.announcementId }">Request to Donate</button>
     </div>
 </div>
