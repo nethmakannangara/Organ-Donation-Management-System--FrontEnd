@@ -13,10 +13,10 @@ import { HomePageComponent } from './features/home-page/home-page.component';
 
 export const routes: Routes = [
     {
-        path:'bonor-dashboard',
+        path:'donor-dashboard',
         component:DonorDashboardComponent,
         children:[{
-            path:'notices',
+            path:'',
             component:NoticesComponent,    
         },
         {

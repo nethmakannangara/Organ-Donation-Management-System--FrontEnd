@@ -48,5 +48,4 @@ export class AuthServiceService {
     localStorage.removeItem('authToken');
     this.router.navigate(['/login']);
   }
-
 }

@@ -1,18 +1,19 @@
+import { NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,NgFor],
   templateUrl: './registration-form.component.html',
   styleUrl: './registration-form.component.css'
 })
 export class RegistrationFormComponent {
 
-  constructor(private http: HttpClient,private route:ActivatedRoute) { 
+  constructor(private http: HttpClient,private route:ActivatedRoute,private router: Router) { 
     this.route.queryParams.subscribe((params) => {
       this.donor.email = params['email'];
     });
@@ -43,9 +44,11 @@ export class RegistrationFormComponent {
   ngOnInit(): void {
     this.donor.dateOfRegistration = this.formatDate(new Date());
 
-    this.http.get("http://localhost:8080/donors/generate-id").subscribe(data =>{
-      this.donor.donorId = data;
-    })
+    this.http.get<string>("http://localhost:8080/donor/generate-id", { responseType: 'text' as 'json' }).subscribe(data => {
+      this.donor.donorId = data;  
+    }, error => {
+      console.error('Error fetching donor ID:', error);
+    });
   }
 
   public checkBirthday(dob: Date) {
@@ -103,22 +106,19 @@ export class RegistrationFormComponent {
   }
 
   public submit() {
-    conditionCount:Number; 
-    for (let index = 1; index <= 5; index++) {
-      const conditionCheckBox = document.getElementById(`condition${index}`) as HTMLInputElement | null;
-      if (conditionCheckBox) {
-        if(conditionCheckBox.checked){
-          this.conditionCount= index;
+    this.http.post("http://localhost:8080/donor/register", this.donor).subscribe(
+      data => {
+        console.log(data);  
+        if (true) { 
+          this.router.navigate(['/donor-dashboard'], {queryParams: { email: this.donor.email } });
+        } else {
+          alert('Registration failed. Please try again.');
         }
+      },
+      error => {
+        console.error('Error occurred:', error);
+        alert('There was an error processing your registration. Please try again later.');
       }
-    }
-
-    if((this.conditionCount = 5) && this.notNullValues()){
-      console.log(this.donor)
-      this.http.post("http://localhost:8080/donors/register",this.donor).subscribe(data => {
-          console.log(data);
-        })
-    }
-  }
+    )};
 
 }

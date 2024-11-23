@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-donor-dashboard',
@@ -8,6 +8,17 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   templateUrl: './donor-dashboard.component.html',
   styleUrl: './donor-dashboard.component.css'
 })
-export class DonorDashboardComponent {
+
+
+export class DonorDashboardComponent implements OnInit{
+  
+  public donorEmail: string | null = null;
+
+  constructor(private route:ActivatedRoute){} 
+  ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      this.donorEmail = params['email'];
+    });
+  }
 
 }
