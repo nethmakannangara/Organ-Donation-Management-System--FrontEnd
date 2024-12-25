@@ -15,32 +15,32 @@
 /* .main{
     background-color: rgb(231, 230, 230);
     border-radius: 0.6rem;
-}
+} */
 
 
-.side-bar{
+/* .side-bar{
     width: 7%;
     border-radius: 0.6rem;
     justify-content: center;
     background-color: rgb(206, 206, 206);
-}
-.logo-box{
+} */
+/* .logo-box{
     width: 100%;
     display: flex;
     text-align: center;
-}
+} */
 
-.logo-image{
+/* .logo-image{
     width:80%;
     height: 100%;
-}
+} */
 
-.option-panel{
+/* .option-panel{
     width: 100%;
     height: 550px;
-}
+} */
 
-.option-1,
+/* .option-1,
 .option-2,
 .option-3,
 .option-4,
@@ -51,57 +51,57 @@
     justify-content: center;
     height: fit-content;
     padding: 3px 0 3px 0;
-}
+} */
 
-.icon{
+/* .icon{
     background-color: rgb(253, 253, 253);
     width: fit-content;
     height: fit-content;
     padding: 8px;
     border-radius: 50%;
     cursor: pointer;
-}
+} */
 
-.option-5{
+/* .option-5{
     position: relative;
     bottom: 2px;
-}
+} */
 
-.footer-pannel{
+/* .footer-pannel{
     width: 100%;
-}
+} */
 
-.right-side-panel{
+/* .right-side-panel{
     width: 93%;
-}
+} */
 
-.nav-bar{
+/* .nav-bar{
     width: 100%;
     display: flex;
     height: fit-content;
-}
+} */
 
-.hospital-name{
+/* .hospital-name{
     width: 50%;
     height: 90px;
     align-content: center;  
-}
+} */
 
-.profile-photo-section{
+/* .profile-photo-section{
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-}
+} */
 
-.profile_photo{
+/* .profile_photo{
     width: 80px;
     height: 80px;
     clip-path: circle(50%);
     cursor: pointer;
-}
+} */
 
-.title{
+/* .title{
     font-size: 35px;
     font-family: MergeOne-Regular;
     color: rgb(44, 42, 42);
@@ -119,9 +119,9 @@
     width: 50%;
     text-align: center;
     align-content: center;
-}
+} */
 
-.greeting-content{
+/* .greeting-content{
     font-size: 45px;
     align-content: center;
     align-items: center;
@@ -142,7 +142,7 @@
 .display-count{
     font-size: 25px;
     user-select: none;
-} */
+}  */
 
 .hopital-logo {
     height: 70px;

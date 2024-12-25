@@ -1,0 +1,84 @@
+<div class="mt-10 ml-32 mr-4">
+    <h1 class="text-3xl font-bold mb-5">Patient and Organ Request Management</h1>
+    
+    <!-- Patient Registration -->
+    <div class="mb-8 p-5 bg-gray-100 rounded shadow-md">
+        <h2 class="text-xl font-semibold mb-3">Register Patient</h2>
+        <form #patientForm="ngForm" (ngSubmit)="savePatient()">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="patientId" class="block text-sm font-medium text-gray-700">Patient ID</label>
+                    <input id="patientId" name="patientId" [(ngModel)]="patient.patientId" type="text"
+                        class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+                    <input id="firstName" name="firstName" [(ngModel)]="patient.firstName" type="text"
+                        class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+                    <input id="lastName" name="lastName" [(ngModel)]="patient.lastName" type="text"
+                        class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
+                    <input id="age" name="age" [(ngModel)]="patient.age" type="number"
+                        class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="bloodType" class="block text-sm font-medium text-gray-700">Blood Type</label>
+                    <input id="bloodType" name="bloodType" [(ngModel)]="patient.bloodType" type="text"
+                        class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="organ" class="block text-sm font-medium text-gray-700">Organ</label>
+                    <input id="organ" name="organ" [(ngModel)]="patient.organ" type="text"
+                        class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+            </div>
+            <button type="submit"
+                class="mt-5 px-4 py-2 bg-blue-500 text-white rounded shadow-md hover:bg-blue-600">
+                Save Patient
+            </button>
+        </form>
+    </div>
+
+    <!-- Organ Request Announcement -->
+    <div class="mb-8 p-5 bg-gray-100 rounded shadow-md">
+        <h2 class="text-xl font-semibold mb-3">Create Organ Request Announcement</h2>
+        <form #announcementForm="ngForm" (ngSubmit)="createAnnouncement()">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="announcementId" class="block text-sm font-medium text-gray-700">Announcement ID</label>
+                    <input id="announcementId" name="announcementId" [(ngModel)]="announcement.announcementId" type="text"
+                        class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="patientId" class="block text-sm font-medium text-gray-700">Patient ID</label>
+                    <input id="patientId" name="patientId" [(ngModel)]="announcement.patientId" type="text"
+                        class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div class="col-span-2">
+                    <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                    <textarea id="description" name="description" [(ngModel)]="announcement.description" rows="3"
+                        class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <div>
+                    <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
+                    <input id="age" name="age" [(ngModel)]="announcement.age" type="number"
+                        class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="organ" class="block text-sm font-medium text-gray-700">Organ</label>
+                    <input id="organ" name="organ" [(ngModel)]="announcement.organ" type="text"
+                        class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+            </div>
+            <button type="submit"
+                class="mt-5 px-4 py-2 bg-green-500 text-white rounded shadow-md hover:bg-green-600">
+                Create Announcement
+            </button>
+        </form>
+    </div>
+</div>

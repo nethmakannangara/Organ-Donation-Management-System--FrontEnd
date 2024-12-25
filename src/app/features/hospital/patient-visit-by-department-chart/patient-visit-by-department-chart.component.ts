@@ -11,10 +11,12 @@ export class PatientVisitByDepartmentChartComponent implements OnInit, OnDestroy
   private chart!: Chart;
 
   private defaultData = {
-    cardiology: [35.1, 23.5, 2.4, 5.4],
-    neurology: [25.1, 26.5, 1.4, 3.4],
-    dermatology: [45.1, 27.5, 8.4, 2.4]
+    cardiology: [120, 100, 80],
+    neurology: [90, 110, 70],
+    dermatology: [150, 130, 100]
   };
+
+  private activeData = this.defaultData.cardiology;
 
   ngOnInit(): void {
     this.createChart();
@@ -28,24 +30,20 @@ export class PatientVisitByDepartmentChartComponent implements OnInit, OnDestroy
 
   private createChart(): void {
     const ctx = document.getElementById('patientVisitChart') as HTMLCanvasElement;
-    
+
     const config: ChartConfiguration = {
       type: 'doughnut',
       data: {
-        labels: ['Emergency', 'Routine', 'Follow-up', 'Consultation'],
+        labels: ['Cardiology', 'Neurology', 'Dermatology'],
         datasets: [{
-          data: this.defaultData.cardiology,
-          backgroundColor: [
-            '#1C64F2',
-            '#16BDCA',
-            '#FDBA8C',
-            '#E74694'
-          ],
-          hoverOffset: 4
+          data: this.activeData, 
+          backgroundColor: ['#16BDCA', '#FDBA8C', '#E74694'], 
+          hoverOffset: 4,
         }]
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             position: 'bottom',
@@ -63,29 +61,22 @@ export class PatientVisitByDepartmentChartComponent implements OnInit, OnDestroy
 
   handleCheckboxChange(event: Event): void {
     const checkbox = event.target as HTMLInputElement;
-    
-    if (this.chart) {
-      let newData: number[];
 
-      if (checkbox.checked) {
-        switch (checkbox.value) {
-          case 'cardiology':
-            newData = this.defaultData.cardiology;
-            break;
-          case 'neurology':
-            newData = this.defaultData.neurology;
-            break;
-          case 'dermatology':
-            newData = this.defaultData.dermatology;
-            break;
-          default:
-            newData = this.defaultData.cardiology;
-        }
-      } else {
-        newData = this.defaultData.cardiology;
+    if (this.chart) {
+     
+      switch (checkbox.value) {
+        case 'cardiology':
+          this.activeData = checkbox.checked ? this.defaultData.cardiology : [];
+          break;
+        case 'neurology':
+          this.activeData = checkbox.checked ? this.defaultData.neurology : [];
+          break;
+        case 'dermatology':
+          this.activeData = checkbox.checked ? this.defaultData.dermatology : [];
+          break;
       }
 
-      this.chart.data.datasets[0].data = newData;
+      this.chart.data.datasets[0].data = this.activeData;
       this.chart.update();
     }
   }

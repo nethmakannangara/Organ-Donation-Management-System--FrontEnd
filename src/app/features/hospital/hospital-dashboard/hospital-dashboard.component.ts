@@ -7,11 +7,12 @@ import { PatientVisitByGenderChartComponent } from "../patient-visit-by-gender-c
 import { MalePatientVistChartComponent } from "../male-patient-vist-chart/male-patient-vist-chart.component";
 import { FemalePatientVistChartComponent } from "../female-patient-vist-chart/female-patient-vist-chart.component";
 import { DoctorListComponent } from "../doctor-list/doctor-list.component";
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-hospital-dashboard',
   standalone: true,
-  imports: [PatientVisitByDepartmentChartComponent, AveragePatientVisitChartComponent, PulseAnimationComponentComponent, PatientVisitByGenderChartComponent, MalePatientVistChartComponent, FemalePatientVistChartComponent, DoctorListComponent],
+  imports: [PatientVisitByDepartmentChartComponent, AveragePatientVisitChartComponent, PulseAnimationComponentComponent, PatientVisitByGenderChartComponent, MalePatientVistChartComponent, FemalePatientVistChartComponent, DoctorListComponent,RouterLink,RouterOutlet],
   templateUrl: './hospital-dashboard.component.html',
   styleUrl: './hospital-dashboard.component.css'
 })

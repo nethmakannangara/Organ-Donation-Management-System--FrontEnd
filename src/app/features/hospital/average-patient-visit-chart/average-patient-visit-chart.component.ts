@@ -9,10 +9,9 @@ import { ApexOptions, NgApexchartsModule } from 'ng-apexcharts';
   styleUrl: './average-patient-visit-chart.component.css'
 })
 export class AveragePatientVisitChartComponent {
-
   chartOptions: ApexOptions = {
     chart: {
-      width:"100%",
+      width: "100%",
       parentHeightOffset: 3,
       type: 'bar',
       height: '320px',
@@ -22,34 +21,7 @@ export class AveragePatientVisitChartComponent {
       }
     },
     colors: ["#1A56DB", "#FDBA8C"],
-    series: [
-      {
-        name: "Organic",
-        color: "#1A56DB",
-        data: [
-          { x: "Mon", y: 231 },
-          { x: "Tue", y: 122 },
-          { x: "Wed", y: 63 },
-          { x: "Thu", y: 421 },
-          { x: "Fri", y: 122 },
-          { x: "Sat", y: 323 },
-          { x: "Sun", y: 111 }
-        ]
-      },
-      {
-        name: "Social media",
-        color: "#FDBA8C",
-        data: [
-          { x: "Mon", y: 232 },
-          { x: "Tue", y: 113 },
-          { x: "Wed", y: 341 },
-          { x: "Thu", y: 224 },
-          { x: "Fri", y: 522 },
-          { x: "Sat", y: 411 },
-          { x: "Sun", y: 243 }
-        ]
-      }
-    ],
+    series: [],
     plotOptions: {
       bar: {
         horizontal: false,
@@ -63,14 +35,6 @@ export class AveragePatientVisitChartComponent {
       intersect: false,
       style: {
         fontFamily: "Inter, sans-serif"
-      }
-    },
-    states: {
-      hover: {
-        filter: {
-          type: "darken",
-          value: 1
-        }
       }
     },
     stroke: {
@@ -116,4 +80,52 @@ export class AveragePatientVisitChartComponent {
       opacity: 1
     }
   };
+
+  private monthlyData = [
+    {
+      name: "Male",
+      color: "#1A56DB",
+      data: [231, 122, 63, 421, 122, 323, 111]
+    },
+    {
+      name: "Female",
+      color: "#FDBA8C",
+      data: [232, 113, 341, 224, 522, 411, 243]
+    }
+  ];
+
+  private yearlyData = [
+    {
+      name: "Male",
+      color: "#1A56DB",
+      data: [2412, 2111, 2002, 1500, 3200, 2900, 1800]
+    },
+    {
+      name: "Female",
+      color: "#FDBA8C",
+      data: [2511, 2300, 3003, 2000, 4000, 3500, 2200]
+    }
+  ];
+
+  constructor() {
+    this.updateChartData('monthly');
+  }
+
+  handleTimeRangeChange(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    if (target.value === 'monthly' || target.value === 'yearly') {
+      this.updateChartData(target.value);
+    } else {
+      console.error('Invalid value:', target.value);
+    }
+  }
+
+  private updateChartData(range: 'monthly' | 'yearly'): void {
+    const data = range === 'monthly' ? this.monthlyData : this.yearlyData;
+    this.chartOptions.series = data;
+    this.chartOptions.xaxis = {
+      ...this.chartOptions.xaxis,
+      categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    };
+  }
 }

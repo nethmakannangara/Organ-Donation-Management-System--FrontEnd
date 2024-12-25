@@ -10,6 +10,8 @@ import { LoginComponent } from './core/auth/component/login/login.component';
 import { OtpVerificaionComponent } from './core/auth/component/otp-verificaion/otp-verificaion.component';
 import { RegistrationFormComponent } from './features/donor/registration-form/registration-form.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
+import { AddAnnouncementComponent } from './features/hospital/add-announcement/add-announcement.component';
+import { HospitalHomeComponent } from './features/hospital/hospital-home/hospital-home.component';
 
 export const routes: Routes = [
     {
@@ -27,7 +29,17 @@ export const routes: Routes = [
     },
     {
         path:'hospital-dashboard',
-        component:HospitalDashboardComponent
+        component:HospitalDashboardComponent,
+        children:[
+            {
+                path:'',
+                component: HospitalHomeComponent
+            },
+            {
+                path:'add-announcement',
+                component: AddAnnouncementComponent
+            }
+        ]
     },
     {
         path:'login',

@@ -1,4 +1,4 @@
-<div class="max-w-sm w-full bg-white rounded-lg shadow  p-4 md:p-6">
+<!-- <div class="max-w-sm w-full bg-white rounded-lg shadow  p-4 md:p-6">
 
     <div class="flex justify-between pb-4 mb-4 border-b border-gray-200 ">
       <div class="chart-title">Average Patient Visit</div>
@@ -22,7 +22,39 @@
     </div>
   
     <div class="grid grid-cols-1 items-center border-gray-200 border-t justify-between">
-      <!-- Your button and other controls -->
+      Your button and other controls
     </div>
   </div>
-  
+   -->
+
+<div class="max-w-sm w-full bg-white rounded-lg shadow p-4 md:p-6">
+  <div class="flex justify-between pb-4 mb-4 border-b border-gray-200">
+    <div class="chart-title">Average Patient Visit</div>
+  </div>
+
+  <div class="flex justify-center mb-4">
+    <div class="flex items-center mr-4">
+      <input type="radio" id="monthly" name="timeRange" value="monthly"
+        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+        (change)="handleTimeRangeChange($event)" checked />
+      <label for="monthly" class="ml-2 text-sm font-medium text-gray-900">Monthly</label>
+    </div>
+    <div class="flex items-center">
+      <input type="radio" id="yearly" name="timeRange" value="yearly"
+        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+        (change)="handleTimeRangeChange($event)" />
+      <label for="yearly" class="ml-2 text-sm font-medium text-gray-900">Yearly</label>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1">
+    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis" [plotOptions]="chartOptions.plotOptions" [tooltip]="chartOptions.tooltip"
+      [legend]="chartOptions.legend" [grid]="chartOptions.grid" [stroke]="chartOptions.stroke"
+      [dataLabels]="chartOptions.dataLabels" [fill]="chartOptions.fill" class="w-full h-[320px]"></apx-chart>
+  </div>
+
+  <div class="grid grid-cols-1 items-center border-gray-200 border-t justify-between">
+    <!-- Other controls -->
+  </div>
+</div>
