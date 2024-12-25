@@ -33,10 +33,13 @@ export class LoginComponent {
     };
 
 
-    this.authService.login(loginInfo).subscribe(
+    this.authService.login(this.email).subscribe(
       (response) => {
         if (response) {
-          this.router.navigate(['login/otp-verification'], { queryParams: { email: this.email } });
+          if(response.password === this.password){
+            console.log("data")
+            this.router.navigate(['/donor-dashboard'], { queryParams: { email: this.email } });
+          }
         } else {
           if (!this.isValidEmail(this.email)) {
             this.showToast('email');
@@ -50,6 +53,9 @@ export class LoginComponent {
         this.showToast('email');
       }
     );
+  }
+  checkPassword(hashedPassword: string, password: string): boolean {
+    return CryptoJS.SHA256(password).toString(CryptoJS.enc.Base64) === hashedPassword;
   }
 
   isValidEmail(email: string): boolean {

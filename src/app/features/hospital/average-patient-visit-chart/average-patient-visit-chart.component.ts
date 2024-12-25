@@ -98,12 +98,12 @@ export class AveragePatientVisitChartComponent {
     {
       name: "Male",
       color: "#1A56DB",
-      data: [2412, 2111, 2002, 1500, 3200, 2900, 1800]
+      data: [220, 240, 228, 320, 320, 503, 410, 290, 300, 350, 330, 520]
     },
     {
       name: "Female",
       color: "#FDBA8C",
-      data: [2511, 2300, 3003, 2000, 4000, 3500, 2200]
+      data: [212, 290, 200, 300, 420, 370, 430, 310, 320, 270, 390, 440]
     }
   ];
 
@@ -121,11 +121,21 @@ export class AveragePatientVisitChartComponent {
   }
 
   private updateChartData(range: 'monthly' | 'yearly'): void {
-    const data = range === 'monthly' ? this.monthlyData : this.yearlyData;
-    this.chartOptions.series = data;
-    this.chartOptions.xaxis = {
-      ...this.chartOptions.xaxis,
-      categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-    };
+    if (range === 'monthly') {
+      this.chartOptions.series = this.monthlyData;
+      this.chartOptions.xaxis = {
+        ...this.chartOptions.xaxis,
+        categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      };
+    } else if (range === 'yearly') {
+      this.chartOptions.series = this.yearlyData;
+      this.chartOptions.xaxis = {
+        ...this.chartOptions.xaxis,
+        categories: [
+          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        ]
+      };
+    }
   }
 }

@@ -13,19 +13,17 @@ export class AuthServiceService {
   constructor(private http: HttpClient, private router: Router) {}
 
    // Login function: sends username and password to the backend
-  login(loginInfo: any): Observable<any> {
-    console.log(loginInfo)
-    return this.http.post<any>(`http://localhost:8080/login`, loginInfo);
+  login(email: string): Observable<any> {
+    return this.http.get<any>(`http://localhost:8080/login/user/${email}`);
   }
 
-  // OTP Verification function for Donor
   verifyOtp(email: string): Observable<any> {
-    return this.http.get<any>(`http://localhost:8080/login/${email}`);
+    return this.http.get<any>(`http://localhost:8080/login/send-OTP/${email}`);
   }
 
   // Register Donor function
-  registerDonor(user: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/register-donor`, user);
+  registerDonor(loginInfo: any): Observable<any> {
+    return this.http.post<any>(`http://localhost:8080/login`, loginInfo);
   }
 
   // Save token to local storage (JWT token)

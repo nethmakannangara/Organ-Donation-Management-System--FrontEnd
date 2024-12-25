@@ -12,6 +12,8 @@ import { RegistrationFormComponent } from './features/donor/registration-form/re
 import { HomePageComponent } from './features/home-page/home-page.component';
 import { AddAnnouncementComponent } from './features/hospital/add-announcement/add-announcement.component';
 import { HospitalHomeComponent } from './features/hospital/hospital-home/hospital-home.component';
+import { HospitalLoginComponent } from './core/auth/component/hospital-login/hospital-login.component';
+import { SignUpComponent } from './core/auth/component/sign-up/sign-up.component';
 
 export const routes: Routes = [
     {
@@ -46,14 +48,26 @@ export const routes: Routes = [
         component:MainComponent,
         children:[
             {
-                path:'',
+                path:'donor-login',
                 component:LoginComponent
+            },
+            {
+                path:'donor-signUp',
+                component:SignUpComponent
+            },
+            {
+                path:'hospital',
+                component:HospitalLoginComponent
             },
             {
                 path:'otp-verification',
                 component:OtpVerificaionComponent
             }
         ]
+    },
+    {
+        path:'hospital-login',
+        component:HospitalLoginComponent
     },
     {
         path:'donor-registration-form',
